@@ -1,0 +1,13 @@
+.animation {
+    stroke-dasharray: 1120;
+    stroke-width: 2px;
+    fill: transparent;
+    stroke: #75d77e;
+    transition-timing-function: linear;
+    transition: stroke-dashoffset 4s, stroke-dasharray 1s;
+    stroke-dashoffset: 1120;
+}
+
+.svg-wrapper:hover .animation {
+    stroke-dashoffset: 0;
+}
