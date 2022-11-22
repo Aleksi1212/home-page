@@ -7,6 +7,7 @@ function Navbar() {
             <div className="flex justify-between h-28 fixed w-screen">
                 <div className="flex justify-center items-center w-48 mt-14 ml-10">
                     <img className="shadow" src={home} alt="home" width={35} height={35}/>
+                    <h1>hello world</h1>
                 </div>
 
                 <div className="flex justify-evenly w-2/5 mr-10">
