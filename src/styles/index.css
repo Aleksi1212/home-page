@@ -4,10 +4,10 @@
 
 @layer components {
     .svg-wrapper {
-        @apply relative translate-y-1/2 m-auto w-96 
+        @apply relative translate-y-1/2 m-auto w-96
     }
 
     .navbar-button {
-        @apply text-xl text-white -top-12 relative w-24 text-center mt-px active:text-lg active:opacity-50
+        @apply text-xl text-white -top-14 relative w-24 text-center mt-px active:text-lg active:opacity-50
     }
 }
