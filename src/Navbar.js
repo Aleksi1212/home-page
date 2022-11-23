@@ -1,5 +1,6 @@
 import background from './images/background.png'
 import home from './images/home.png'
+import Progressbar from 'react-progressbar-on-scroll'
 
 function Navbar() {
     function mouseout() {
@@ -15,11 +16,11 @@ function Navbar() {
 
     return (
         <>
-            <div className="flex justify-between h-28 fixed w-screen">
+            <div className="navbar">
                 <div className="flex justify-center items-center w-48 mt-14 ml-10">
                     <img id="background" src={background} alt="background" width={35} height={35}/>
-                    <img id="home" src={home} alt="home" width={35} height={35} onMouseOver={mouseout} onMouseOut={mousein} className="absolute cursor-pointer"
-                    onClick={() => {window.location.href = '#home'}}/>
+                    <img id="home" src={home} alt="home" width={35} height={35} onMouseOver={mouseout} onMouseOut={mousein} 
+                    className="absolute cursor-pointer active:opacity-50 active:w-8 active:h-8" onClick={() => {window.location.href = '#home'}}/>
                 </div>
 
                 <div className="flex justify-evenly w-2/5 mr-10">
@@ -50,6 +51,14 @@ function Navbar() {
                         </button>
                     </div>
                 </div>
+            </div>
+            <div>
+                <Progressbar 
+                    color="#75d77e"
+                    height={5}
+                    direction="right"
+                    position="top"
+                />
             </div>
         </>
     )

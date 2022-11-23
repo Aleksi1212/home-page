@@ -8,6 +8,23 @@
     stroke-dashoffset: 1120;
 }
 
+#line1, #line2 {
+    stroke-dasharray: 1461;
+    stroke-width: 2px;
+    fill: transparent;
+    stroke: #75d77e;
+    transition-timing-function: linear;
+    transition: stroke-dashoffset 4s, stroke-dasharray 1s;
+}
+
+#line1 {
+    stroke-dashoffset: 1461;
+}
+
+#line2 {
+    stroke-dashoffset: -1461;
+}
+
 .svg-wrapper:hover .animation {
     stroke-dashoffset: 0;
 }

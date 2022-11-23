@@ -4,10 +4,26 @@
 
 @layer components {
     .svg-wrapper {
-        @apply relative translate-y-1/2 m-auto w-96
+        @apply relative translate-y-1/2 m-auto
+    }
+
+    .content-wrapper {
+        @apply mt-44 w-screen flex justify-center
     }
 
     .navbar-button {
-        @apply text-xl text-white -top-14 relative w-24 text-center mt-px active:text-lg active:opacity-50
+        @apply hidden lg:flex text-xl text-white -top-14 relative w-24 text-center mt-px active:text-lg active:opacity-50 justify-center
     }
+
+    .navbar {
+        @apply top-0 flex justify-between sticky w-screen
+    }
+
+    .animation {
+        @apply hidden lg:flex
+    }
+}
+
+.navbar {
+    position: -webkit-sticky;
 }
