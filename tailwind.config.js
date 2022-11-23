@@ -12,7 +12,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        darkGey: '#141C24'
+        darkGey: '#141C24',
+        limeGreen: '#77d75e'
       }
     }
   },

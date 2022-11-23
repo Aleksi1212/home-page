@@ -8,7 +8,7 @@
     stroke-dashoffset: 1120;
 }
 
-#line1, #line2 {
+#homeBorder1, #homeBorder2, #aboutBorder1, #aboutBorder2 {
     stroke-dasharray: 1461;
     stroke-width: 2px;
     fill: transparent;
@@ -17,11 +17,11 @@
     transition: stroke-dashoffset 4s, stroke-dasharray 1s;
 }
 
-#line1 {
+#homeBorder1, #aboutBorder1 {
     stroke-dashoffset: 1461;
 }
 
-#line2 {
+#homeBorder2, #aboutBorder2 {
     stroke-dashoffset: -1461;
 }
 
