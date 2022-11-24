@@ -137,7 +137,7 @@ function Contents() {
                 <img src={projects} alt="projects" width={30} height={30} className="absolute" />
             </div>
 
-            <footer className="w-screen bg-darkGey h-44"></footer>
+            <footer className="w-full bg-darkGey h-44"></footer>
         </>
     )
 }

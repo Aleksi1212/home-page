@@ -12,7 +12,7 @@
     }
 
     .navbar-button {
-        @apply hidden lg:flex text-xl text-white -top-14 relative w-24 text-center mt-px active:text-lg active:opacity-50 justify-center
+        @apply hidden xl:flex text-xl text-white -top-14 relative w-24 text-center mt-px active:text-lg active:opacity-50 justify-center
     }
 
     .navbar {
@@ -20,7 +20,7 @@
     }
 
     .animation {
-        @apply hidden lg:flex
+        @apply hidden xl:flex
     }
 
     .homeinfo h1 {
