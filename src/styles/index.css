@@ -4,11 +4,11 @@
 
 @layer components {
     .svg-wrapper {
-        @apply relative translate-y-1/2 m-auto
+        @apply translate-y-1/2
     }
 
     .content-wrapper {
-        @apply w-screen flex justify-center
+        @apply flex justify-center ml-24
     }
 
     .navbar-button {
@@ -16,7 +16,7 @@
     }
 
     .navbar {
-        @apply top-0 flex justify-between sticky w-screen
+        @apply top-0 flex justify-end w-screen sticky
     }
 
     .animation {
@@ -30,16 +30,24 @@
     .homeinfo p {
         @apply opacity-50 text-lg
     }
+
+    .image {
+        @apply w-96 ml-36 flex justify-start pt-5
+    }
 }
 
 .navbar {
     position: -webkit-sticky;
 }
 
-#about {
-    margin-top: 25%;
+#home, #about, #projects {
+    width: 600px;
 }
 
-/*.homeinfo {
-    border: 1px solid red;
-}*/
+#about, #projects {
+    margin-top: 35%;
+}
+
+footer {
+    margin-top: 50%;
+}

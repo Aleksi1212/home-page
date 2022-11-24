@@ -1,28 +1,9 @@
-import background from './images/background.png'
-import home from './images/home.png'
 import Progressbar from 'react-progressbar-on-scroll'
 
 function Navbar() {
-    function mouseout() {
-        let background = document.getElementById('background')
-        background.style.filter = 'blur(1rem)'
-        background.style.display = 'flex'
-    }
-
-    function mousein() {
-        let background = document.getElementById('background')
-        background.style.filter = 'none'
-    }
-
     return (
         <>
-            <div className="navbar">
-                <div className="flex justify-center items-center w-48 mt-14 ml-10">
-                    <img id="background" src={background} alt="background" width={35} height={35}/>
-                    <img id="home" src={home} alt="home" width={35} height={35} onMouseOver={mouseout} onMouseOut={mousein} 
-                    className="absolute cursor-pointer active:opacity-50 active:w-8 active:h-8" onClick={() => {window.location.href = '#home'}}/>
-                </div>
-
+            <header className="navbar">
                 <div className="flex justify-evenly w-2/5 mr-10">
                     <div className="svg-wrapper">
                         <svg height={70} width={200} xmlns="http://www.w3.org/2000/svg">
@@ -51,7 +32,7 @@ function Navbar() {
                         </button>
                     </div>
                 </div>
-            </div>
+            </header>
             <div>
                 <Progressbar 
                     color="#75d77e"
