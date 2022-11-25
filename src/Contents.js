@@ -1,35 +1,27 @@
 import { useEffect, useRef, useState, useMemo } from "react"
+import Aos from "aos"
+import 'aos/dist/aos.css'
 
 //images
+import background from './images/background.png'
 import home from './images/home.png'
-import homeBackground from './images/homeBackground.png'
 import about from './images/about.png'
-import aboutBackground from './images/aboutBackground.png'
 import projects from './images/projects.png'
-import projectsBackground from './images/projectsBackground.png'
 
 function Contents() {
-    /*useEffect(() => {
+    useEffect(() => {
         Aos.init()
-    }, [])*/
+    }, [])
 
-    const loadContent = (firstLine, secondLine, contentBox, image) => {
+    const loadContent = (firstLine, secondLine) => {
         firstLine.style.strokeDashoffset = '0'
         firstLine.style.strokeDasharray = '1461'
 
         secondLine.style.strokeDashoffset = '0'
         secondLine.style.strokeDasharray = '1461'
-
-        contentBox.style.opacity = '1'
-        contentBox.style.transform = 'none'
-        contentBox.style.visibility = 'visible'
-
-        image.style.opacity = '1'
-        image.style.transform = 'none'
-        image.style.visibility = 'visible'
     }
 
-    const removeContent = (firstLine, secondLine, contentBox, image) => {
+    const removeContent = (firstLine, secondLine) => {
         if (firstLine != null) {
             firstLine.style.strokeDashoffset = '1461'
             firstLine.style.strokeDasharray = '1461'
@@ -37,13 +29,6 @@ function Contents() {
             secondLine.style.strokeDashoffset = '-1461'
             secondLine.style.strokeDasharray = '1461'
 
-            contentBox.style.opacity = '0'
-            contentBox.style.transform = 'translateY(0vh)'
-            contentBox.style.visibility = 'hidden'
-
-            image.style.opacity = '0'
-            image.style.transform = 'translateY(0vh)'
-            image.style.visibility = 'hidden'
         } else {
             console.log('line is null');
         }
@@ -60,36 +45,30 @@ function Contents() {
     const borders = {
         homeBorder1: document.getElementById('homeBorder1'),
         homeBorder2: document.getElementById('homeBorder2'),
-        homeContent: document.getElementById('home'),
-        homeIcon: document.getElementById('homeImage'),
 
         aboutBorder1: document.getElementById('aboutBorder1'),
         aboutBorder2: document.getElementById('aboutBorder2'),
-        aboutContent: document.getElementById('about'),
-        aboutIcon: document.getElementById('aboutImage'),
 
         projectBorder1: document.getElementById('projectBorder1'),
-        projectBorder2: document.getElementById('projectBorder2'),
-        projectContent: document.getElementById('projects'),
-        projectIcon: document.getElementById('projectImage')
+        projectBorder2: document.getElementById('projectBorder2')
     }
 
     if (homeInview) {
-        loadContent(borders.homeBorder1, borders.homeBorder2, borders.homeContent, borders.homeIcon)
+        loadContent(borders.homeBorder1, borders.homeBorder2)
     } else if (!homeInview) {
-        removeContent(borders.homeBorder1, borders.homeBorder2, borders.homeContent, borders.homeIcon)
+        removeContent(borders.homeBorder1, borders.homeBorder2)
     }
 
     if (aboutInview) {
-        loadContent(borders.aboutBorder1, borders.aboutBorder2, borders.aboutContent, borders.aboutIcon)
+        loadContent(borders.aboutBorder1, borders.aboutBorder2)
     } else if (!aboutInview) {
-        removeContent(borders.aboutBorder1, borders.aboutBorder2, borders.aboutContent, borders.aboutIcon)
+        removeContent(borders.aboutBorder1, borders.aboutBorder2)
     }
 
     if (projectInview) {
-        loadContent(borders.projectBorder1, borders.projectBorder2, borders.projectContent, borders.projectIcon)
+        loadContent(borders.projectBorder1, borders.projectBorder2)
     } else if (!projectInview) {
-        removeContent(borders.projectBorder1, borders.projectBorder2, borders.projectContent, borders.projectIcon)
+        removeContent(borders.projectBorder1, borders.projectBorder2)
 
     }
 
@@ -109,7 +88,7 @@ function Contents() {
                 </div>
             </div>
             <div id="homeImage" className="image">
-                <img src={homeBackground} alt="homeBackground" width={30} height={30} className="blur-lg" />
+                <img src={background} alt="background" width={30} height={30} className="blur-lg" data-Aos='zoom-in' />
                 <img src={home} alt="home"width={30} height={30} className="absolute" />
             </div>
 
@@ -121,7 +100,7 @@ function Contents() {
                 </svg>
             </div>
             <div id="aboutImage" className="image">
-                <img src={aboutBackground} alt="aboutBackground" width={30} height={30} className="blur-lg" />
+                <img src={background} alt="background" width={30} height={30} className="blur-lg" data-Aos='zoom-in' />
                 <img src={about} alt="about" width={30} height={30} className="absolute" />
             </div>
 
@@ -133,7 +112,7 @@ function Contents() {
                 </svg>
             </div>
             <div id="projectImage" className="image">
-                <img src={projectsBackground} alt="projectsBackground" width={30} height={30} className="blur-lg" />
+                <img src={background} alt="background" width={30} height={30} className="blur-lg" data-Aos='zoom-in' />
                 <img src={projects} alt="projects" width={30} height={30} className="absolute" />
             </div>
 

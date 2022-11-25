@@ -8,7 +8,7 @@
     }
 
     .content-wrapper {
-        @apply flex justify-center ml-24
+        @apply flex justify-center ml-24 bg-veryDarkBlue
     }
 
     .navbar-button {
@@ -32,7 +32,11 @@
     }
 
     .image {
-        @apply w-96 ml-36 flex justify-start pt-5
+        @apply w-96 ml-40 flex justify-start py-5 bg-veryDarkBlue
+    }
+
+    .top-lines {
+        @apply absolute top-0 overflow-hidden
     }
 }
 
@@ -46,6 +50,24 @@
 
 #about, #projects {
     margin-top: 35%;
+}
+
+
+.top-lines #line1 {
+    margin-left: 10.75rem;
+    margin-top: -0.1rem;
+}
+
+.top-lines #line2 {
+    margin-top: -11rem;
+    margin-left: -2rem;
+}
+
+.line {
+    position: absolute;
+    overflow: hidden;
+    margin-top: 32rem;
+    margin-left: 10.75rem;
 }
 
 footer {
