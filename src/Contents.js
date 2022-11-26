@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, useMemo } from "react"
 import Aos from "aos"
 import 'aos/dist/aos.css'
+import Bachgroundline from "./Bachgroundline"
 
 //images
 import background from './images/background.png'
@@ -59,21 +60,18 @@ function Contents() {
         removeContent(borders.homeBorder1, borders.homeBorder2)
     }
 
-    if (aboutInview) {
-        loadContent(borders.aboutBorder1, borders.aboutBorder2)
-    } else if (!aboutInview) {
+    if (!aboutInview) {
         removeContent(borders.aboutBorder1, borders.aboutBorder2)
     }
-
-    if (projectInview) {
-        loadContent(borders.projectBorder1, borders.projectBorder2)
-    } else if (!projectInview) {
+    
+    if (!projectInview) {
         removeContent(borders.projectBorder1, borders.projectBorder2)
 
     }
 
     return (
         <>
+            <Bachgroundline borders={borders} aboutInview={aboutInview} projectInview={projectInview} loadContent={loadContent} removeContent={removeContent} />
             {/* Home section */}
             <div id="home" className="content-wrapper mt-44" ref={homeRef}>
                 <svg height={260} width={510} xmlns="http://www.w3.org/2000/svg">
