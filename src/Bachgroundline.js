@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect } from "react"
 
 function setBackground(Background) {
-    return function useSetBackground(props) {
+    return (props) => {
         
         useEffect(() => {
             let path = document.getElementById('linePath')
@@ -48,7 +48,7 @@ function setBackground(Background) {
     }
 }
 
-class Background extends  React.Component {
+class Background extends React.Component {
     constructor(props) {
         super(props)
     }
