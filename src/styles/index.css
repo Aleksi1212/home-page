@@ -96,22 +96,18 @@
 
 #form-wrapper {
     margin-top: 15rem;
-    background-color: #0f1024;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
     width: 20rem;
     height: 20rem;
-    border-radius: 30px;
-    border: 3px solid #77d75e;
 }
 
 .form-input {
-    width: 15rem;
+    width: 20rem;
     margin-top: .5rem;
     border-radius: 5px;
-    background: #141C24;
+    background: #3f3f3f;
     padding: 5px;
 }
 
@@ -120,8 +116,9 @@
     justify-content: center;
     background-color: #77d75e;
     cursor: pointer;
-    width: 15rem;
+    width: 20rem;
     height: 30px;
+    margin-top: .5rem;
     border-radius: 5px;
     overflow: hidden;
 }
@@ -144,6 +141,27 @@
 
 .alt-send-button:hover {
     transform: translate3d(0px, -29px, 0px);
+}
+
+.alert {
+    position: absolute;
+    width: 20rem;
+    height: 100px;
+    margin-top: 47rem;
+    margin-left: 55rem;
+    border-radius: 5px;
+    background-color: #2f2f2f;
+    display: inline;
+    transition: margin-left 1s;
+}
+
+.alertheader {
+    width: 20rem;
+    height: 22px;
+    border-radius: 5px 5px 0 0;
+    padding-left: 5px;
+    display: flex;
+    background-color: #77d75e;
 }
 
 .top-lines #line1 {
