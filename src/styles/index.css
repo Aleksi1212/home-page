@@ -54,32 +54,96 @@
 
 #form-container {
     top: 0;
-    right: 0;
+    right: -35rem;
     height: 100%;
-    width: 44rem;
+    width: 35rem;
     position: fixed;
     background-color: #141C24;
     display: flex;
     justify-content: center;
+    transition: right 2s;
 }
 
-#contact-form {
-    margin-top: 40%;
-    width: 30rem;
-    height: 30rem;
-    background-color: #0f1024;
-    border-radius: 30px;
-    border: 3px solid #75d77e;
+#close-form {
+    position: absolute;
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin-top: 1.5rem;
+    margin-right: 30rem;
+    width: 50px;
+    height: 35px;
+    overflow: hidden;
 }
 
-#contact-form input, textarea {
+.alt-close-form {
+    width: 50px;
+    height: 35px;
+    transition: all .2s ease-in-out;
+}
+
+.alt-close-form img {
+    margin-left: 8px;
+}
+
+.close-text {
     display: block;
-    margin-top: 50px;
-    /* background: none;
-    border-bottom: 1px solid white; */
+    margin-top: 5px;
+}
+
+.alt-close-form:hover {
+    transform: translate3d(0px, -29px, 0px);
+}
+
+#form-wrapper {
+    margin-top: 15rem;
+    background-color: #0f1024;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 30px;
+    border: 3px solid #77d75e;
+}
+
+.form-input {
+    width: 15rem;
+    margin-top: .5rem;
+    border-radius: 5px;
+    background: #141C24;
+    padding: 5px;
+}
+
+.form-submit {
+    display: flex;
+    justify-content: center;
+    background-color: #77d75e;
+    cursor: pointer;
+    width: 15rem;
+    height: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.alt-send-button {
+    width: 15rem;
+    height: 30px;
+    padding-top: 5px;
+    transition: all .2s ease-in-out;
+}
+
+.alt-send-button img {
+    margin-left: 6.8rem;
+}
+
+.send-text {
+    display: block;
+    margin-top: 8px;
+}
+
+.alt-send-button:hover {
+    transform: translate3d(0px, -29px, 0px);
 }
 
 .top-lines #line1 {
