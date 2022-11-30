@@ -20,18 +20,18 @@ function setBackground(Background) {
                 let pathPos = path.style.strokeDashoffset.slice(0, -2)
 
                 if (scrollDir > scrollSet) {
-                    if (Number(pathPos) <= 1000 && Number(pathPos) >= 900 && props.borders.aboutBorder1 != null) {
-                        props.loadContent(props.borders.aboutBorder1, props.borders.aboutBorder2)
-                    } else if (Number(pathPos) <= -10 && Number(pathPos) >= -50) {
+                    // if (Number(pathPos) <= 1000 && Number(pathPos) >= 900 && props.borders.aboutBorder1 != null) {
+                    //     props.loadContent(props.borders.aboutBorder1, props.borders.aboutBorder2)
+                    if (Number(pathPos) <= -10 && Number(pathPos) >= -50) {
                         props.loadContent(props.borders.projectBorder1, props.borders.projectBorder2)
                     }
 
                 } else {
-                    if (props.aboutInview) {
-                        props.loadContent(props.borders.aboutBorder1, props.borders.aboutBorder2)
-                    } else if (!props.aboutInview) {
-                        props.removeContent(props.borders.aboutBorder1, props.borders.aboutBorder2)
-                    }
+                    // if (props.aboutInview) {
+                    //     props.loadContent(props.borders.aboutBorder1, props.borders.aboutBorder2)
+                    // } else if (!props.aboutInview) {
+                    //     props.removeContent(props.borders.aboutBorder1, props.borders.aboutBorder2)
+                    // }
 
                     if (props.projectInview) {
                         props.loadContent(props.borders.projectBorder1, props.borders.projectBorder2)
@@ -67,7 +67,7 @@ class Background extends React.Component {
                 </div>
 
                 <div className="line">
-                    <svg width="5" height="1667" viewBox="0 0 2 1667" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="5" height="1750" viewBox="0 0 2 1667" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path id="linePath" d="M1.27454 -0.00909424V1667" stroke="#77D75E" strokeWidth={2.5}/>
                     </svg>
                 </div>

@@ -4,24 +4,41 @@
     fill: transparent;
     stroke: #75d77e;
     transition-timing-function: linear;
-    transition: stroke-dashoffset 4s, stroke-dasharray 1s;
+    transition: stroke-dashoffset 4s;
     stroke-dashoffset: 1120;
 }
 
-#homeBorder1, #homeBorder2, #aboutBorder1, #aboutBorder2, #projectBorder1, #projectBorder2 {
+#homeBorder1, #homeBorder2, #projectBorder1, #projectBorder2 {
     stroke-dasharray: 1461;
     stroke-width: 2px;
     fill: transparent;
     stroke: #75d77e;
     transition-timing-function: linear;
-    transition: stroke-dashoffset 4s, stroke-dasharray 1s;
+    transition: stroke-dashoffset 4s;
 }
 
-#homeBorder1, #aboutBorder1, #projectBorder1 {
+#aboutBorder1, #aboutBorder2 {
+    stroke-dasharray: 2000;
+    stroke-width: 2px;
+    fill: transparent;
+    stroke: #75d77e;
+    transition-timing-function: linear;
+    transition: stroke-dashoffset 4s;
+}
+
+#aboutBorder1 {
+    stroke-dashoffset: 2000;
+}
+
+#aboutBorder2 {
+    stroke-dashoffset: -1750;
+}
+
+#homeBorder1, #projectBorder1 {
     stroke-dashoffset: 1461;
 }
 
-#homeBorder2, #aboutBorder2, #projectBorder2 {
+#homeBorder2, #projectBorder2 {
     stroke-dashoffset: -1461;
 }
 

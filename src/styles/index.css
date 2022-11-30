@@ -16,19 +16,31 @@
     }
 
     .navbar {
-        @apply top-0 flex justify-end w-screen sticky
+        @apply top-0 flex justify-end w-screen
     }
 
     .animation {
         @apply hidden xl:flex
     }
 
+    .homeinfo {
+        @apply absolute inline w-96 h-64 text-center py-16
+    }
+
+    .aboutinfo {
+        @apply ml-60 -mt-16 h-96 p-3 w-[60rem]
+    }
+
     .homeinfo h1 {
         @apply text-3xl
     }
 
-    .homeinfo p {
-        @apply opacity-50 text-lg
+    .homeinfo p, .aboutinfo p {
+        @apply opacity-50 text-lg whitespace-normal
+    }
+
+    .aboutinfo p {
+        @apply text-2xl
     }
 
     .image {
@@ -40,15 +52,12 @@
     }
 }
 
-.navbar {
-    position: -webkit-sticky;
-}
 
-#home, #about, #projects {
+#home, #projects {
     width: 600px;
 }
 
-#about, #projects {
+#projects, #aboutImage {
     margin-top: 35%;
 }
 
@@ -124,14 +133,14 @@
 }
 
 .alt-send-button {
-    width: 15rem;
+    width: 20rem;
     height: 30px;
     padding-top: 5px;
     transition: all .2s ease-in-out;
 }
 
 .alt-send-button img {
-    margin-left: 6.8rem;
+    margin-left: 9.5rem;
 }
 
 .send-text {
