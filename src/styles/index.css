@@ -23,24 +23,40 @@
         @apply hidden xl:flex
     }
 
-    .homeinfo {
+    /* .homeinfo {
         @apply absolute inline w-96 h-64 text-center py-16
-    }
+    } */
 
-    .aboutinfo {
+    .about-container, .home-container {
         @apply ml-60 -mt-16 h-96 p-3 w-[60rem]
     }
 
-    .homeinfo h1 {
-        @apply text-3xl
+    .project-container {
+        @apply h-[30rem] w-[75rem] flex justify-between absolute
     }
 
-    .homeinfo p, .aboutinfo p {
-        @apply opacity-50 text-lg whitespace-normal
+    .project {
+        @apply h-[35rem] w-[24rem] rounded-[15px] overflow-hidden
     }
 
-    .aboutinfo p {
+    .projectinfo {
+        @apply w-[24rem] h-[7rem] mt-[28rem] bg-lighterGray border-t-8 border-limeGreen pl-5 pt-5
+    }
+
+    .project img {
+        @apply object-cover h-[35rem] absolute cursor-pointer
+    }
+
+    .home-container p, .about-container p {
+        @apply text-2xl whitespace-normal
+    }
+
+    .projectinfo h1 {
         @apply text-2xl
+    }
+
+    .projectinfo p {
+        @apply text-lg whitespace-normal text-[grey]
     }
 
     .image {
@@ -52,15 +68,15 @@
     }
 }
 
-
-#home, #projects {
+#home {
     width: 600px;
 }
 
-#projects, #aboutImage {
+#projectImage, #aboutImage {
     margin-top: 35%;
 }
 
+/* form styles start */
 #form-container {
     top: 0;
     right: -35rem;
@@ -151,7 +167,9 @@
 .alt-send-button:hover {
     transform: translate3d(0px, -29px, 0px);
 }
+/* form styles end */
 
+/* alert styles start */
 .alert {
     position: absolute;
     width: 20rem;
@@ -172,6 +190,7 @@
     display: flex;
     background-color: #77d75e;
 }
+/* alert styles end */
 
 .top-lines #line1 {
     margin-left: 10.75rem;
@@ -183,13 +202,16 @@
     margin-left: -2rem;
 }
 
+/* svg lines styles start */
 .line {
     position: absolute;
     overflow: hidden;
-    margin-top: 32rem;
+    margin-top: 15rem;
     margin-left: 10.75rem;
 }
+/* svg lines styles end */
 
+/* footer styles */
 footer {
     margin-top: 50%;
 }

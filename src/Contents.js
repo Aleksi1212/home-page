@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useMemo } from "react"
+import { useEffect } from "react"
 import Aos from "aos"
 import 'aos/dist/aos.css'
 import Bachgroundline from "./Bachgroundline"
@@ -9,104 +9,33 @@ import home from './images/home.png'
 import about from './images/about.png'
 import projects from './images/projects.png'
 
+import database from './images/database.png'
+import api from './images/api.png'
+import space from './images/space.png'
+
 function Contents() {
     useEffect(() => {
         Aos.init()
     }, [])
-    
-    const loadContent = (firstLine, secondLine) => {
-        if (firstLine == borders.homeBorder1) {
-            firstLine.style.strokeDashoffset = '0'
-        
-            secondLine.style.strokeDashoffset = '0'
-
-        // } else if (firstLine == borders.aboutBorder1) {
-        //     firstLine.style.strokeDashoffset = '0'
-        
-        //     secondLine.style.strokeDashoffset = '0'
-
-        } else if (firstLine == borders.projectBorder1) {
-            firstLine.style.strokeDashoffset = '0'
-        
-            secondLine.style.strokeDashoffset = '0'
-        }
-
-    }
-    
-    const removeContent = (firstLine, secondLine) => {
-        if (firstLine != null && firstLine == borders.homeBorder1) {
-            firstLine.style.strokeDashoffset = '1461'
-
-            secondLine.style.strokeDashoffset = '-1461'
-
-        // } else if (firstLine != null && firstLine == borders.aboutBorder1) {
-        //     firstLine.style.strokeDashoffset = '2000'
-
-        //     secondLine.style.strokeDashoffset = '-1750'
-
-        } else if (firstLine != null && firstLine == borders.projectBorder1) {
-            firstLine.style.strokeDashoffset = '1461'
-
-            secondLine.style.strokeDashoffset = '-1461'
-
-        } else {
-            // error
-        }
-    }
-    
-    const homeRef = useRef(null)
-    const aboutRef = useRef(null)
-    const projectRef = useRef(null)
-    
-    const homeInview = useIsInViewport(homeRef)
-    //const aboutInview = useIsInViewport(aboutRef)
-    const projectInview = useIsInViewport(projectRef)
-    
-    const borders = {
-        homeBorder1: document.getElementById('homeBorder1'),
-        homeBorder2: document.getElementById('homeBorder2'),
-        
-        // aboutBorder1: document.getElementById('aboutBorder1'),
-        // aboutBorder2: document.getElementById('aboutBorder2'),
-        
-        projectBorder1: document.getElementById('projectBorder1'),
-        projectBorder2: document.getElementById('projectBorder2')
-    }
-    
-    if (homeInview) {
-        loadContent(borders.homeBorder1, borders.homeBorder2)
-    } else if (!homeInview) {
-        removeContent(borders.homeBorder1, borders.homeBorder2)
-    }
-    
-    // if (!aboutInview) {
-    //     removeContent(borders.aboutBorder1, borders.aboutBorder2)
-    // }
-    
-    if (!projectInview) {
-        removeContent(borders.projectBorder1, borders.projectBorder2)
-    }
-    
 
     return (
         <>
-            <Bachgroundline borders={borders} /*aboutInview={aboutInview}*/ projectInview={projectInview} loadContent={loadContent} removeContent={removeContent} />
+            <Bachgroundline />
+
             {/* Welcome section */}
-            <div id="home" className="content-wrapper mt-44" ref={homeRef}>
-                <svg height={260} width={510} xmlns="http://www.w3.org/2000/svg">
-                    <rect id="homeBorder1" height={256} width={500} rx={30} x={2} y={2} />
-                    <rect id="homeBorder2" height={256} width={500} rx={30} x={2} y={2} />
-                </svg>
-                <div className="homeinfo" data-Aos="fade-in">
-                    <h1>Welcome to my page</h1>
-                    <br/>
-                    <p>Learn about me and</p>
-                    <p>see all of my projects</p>
-                </div>
-            </div>
-            <div id="homeImage" className="image">
+            <div id="homeImage" className="image mt-44 w-8">
                 <img src={background} alt="background" width={30} height={30} className="blur-lg" data-Aos='zoom-in' data-Aos-delay="150" />
                 <img src={home} alt="home"width={30} height={30} className="absolute" data-Aos='zoom-in' />
+            </div>
+            <div className="home-container">
+                <div className="text-limeGreen pb-4 text-4xl" data-Aos="fade-right">
+                    <h1>Welcome to my page</h1>
+                </div>
+                <p data-Aos="fade-right" data-Aos-delay="300">
+                    Learn about me
+                    <br />
+                    and see all of my projects<span className="text-limeGreen">.</span>
+                </p>
             </div>
 
             {/* About me section */}
@@ -115,7 +44,7 @@ function Contents() {
                 <img src={about} alt="about" width={30} height={30} className="absolute" data-Aos="zoom-in" />
             </div>
 
-            <div className="aboutinfo" id="about">
+            <div className="about-container" id="about">
                 <div className="text-limeGreen pb-4 text-4xl" data-Aos="fade-right">
                     <h1>About me</h1>
                 </div>
@@ -135,44 +64,48 @@ function Contents() {
                 </p>
             </div>
 
-
             {/* Projects section */}
-            <div id="projects" className="content-wrapper" ref={projectRef}>
-                <svg height={260} width={510} xmlns="http://www.w3.org/2000/svg">
-                    <rect id="projectBorder1" height={256} width={500} rx={30} x={2} y={2} />
-                    <rect id="projectBorder2" height={256} width={500} rx={30} x={2} y={2} />
-                </svg>
-            </div>
-            <div id="projectImage" className="image">
+            <div id="projectImage" className="image w-8">
                 <img src={background} alt="background" width={30} height={30} className="blur-lg" data-Aos='zoom-in' data-Aos-delay="150" />
                 <img src={projects} alt="projects" width={30} height={30} className="absolute" data-Aos='zoom-in' />
+            </div>
+
+            <div className="ml-60 w-[75rem] h-[40rem] -mt-16" id="projects">
+                <div className="text-limeGreen pb-8 text-4xl" data-Aos="fade-right">
+                    <h1>Projects</h1>
+                </div>
+
+                <div className="project-container">
+                    <div className="project" data-Aos="fade-right" data-Aos-delay="200">
+                        <img src={database} alt="database" />
+                        <div className="projectinfo">
+                            <h1>Car database</h1>
+                            <p>View reposetory on GitHub</p>
+                        </div>
+                    </div>
+
+                    <div className="project" data-Aos="fade-right" data-Aos-delay="400">
+                        <img src={api} alt="api" />
+                        <div className="projectinfo">
+                            <h1>RESTful api</h1>
+                            <p>View reposetory on GitHub</p>
+                        </div>
+
+                    </div>
+
+                    <div className="project" data-Aos="fade-right" data-Aos-delay="600">
+                        <img src={space} alt="space" />
+                        <div className="projectinfo">
+                            <h1>Python space simulation</h1>
+                            <p>View reposetory on GitHub</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <footer className="w-full bg-darkGey h-44"></footer>
         </>
     )
-}
-
-function useIsInViewport(ref) {
-    const [isIn, setIsin] = useState(false)
-
-    const obs = useMemo(
-        () => 
-            new IntersectionObserver(([entry]) => 
-                setIsin(entry.isIntersecting)
-            ),
-        [],
-    )
-
-    useEffect(() => {
-        obs.observe(ref.current)
-
-        return () => {
-            obs.disconnect()
-        }
-    }, [ref, obs])
-
-    return isIn
 }
 
 export default Contents

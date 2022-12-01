@@ -24,6 +24,7 @@ function Contact(props) {
                 alertRefs.alertBox.current.style.marginLeft = '10rem'
                 alertRefs.success.current.style.display = 'flex'
                 alertRefs.status.current.innerHTML = 'Succesfully sent'
+                document.getElementById('load').style.display = 'none'
 
                 clearAlert()
 
@@ -35,6 +36,7 @@ function Contact(props) {
                 alertRefs.header.current.style.backgroundColor = 'red'
                 alertRefs.error.current.style.display = 'flex'
                 alertRefs.status.current.innerHTML = 'An error occurred'
+                document.getElementById('load').style.display = 'none'
 
                 clearAlert()
 
@@ -48,6 +50,15 @@ function Contact(props) {
         }
     }
 
+    function showLoad() {
+        let values = formRef.current
+        if (values.name.value != '' && values.email.value != '' && values.message.value != '') {
+            document.getElementById('load').style.display = 'inline-block'
+        } else {
+            console.log('form not filled');
+        }
+    } 
+    
     useEffect(() => {
         let formContent = {
             contact: props.test.current,
@@ -65,6 +76,7 @@ function Contact(props) {
 
 
     }, [props])
+
 
     return (
         <>
@@ -96,7 +108,7 @@ function Contact(props) {
                         <textarea className="form-input" rows={7} placeholder="Message" name="message" required >
                         </textarea>
 
-                        <button className="form-submit" type="submit">
+                        <button className="form-submit" type="submit" onClick={showLoad}>
                             <div className="alt-send-button">
                                 <img src={plane} alt="plane" width={20} height={20} />
                                 <span className="send-text">Send</span>
@@ -105,6 +117,9 @@ function Contact(props) {
 
                     </form>
                 </div>
+
+                <div className="loader" id="load"></div>
+
                 <div className="alert" ref={alertRefs.alertBox}>
                     <div className="alertheader" ref={alertRefs.header}>
                         <img src={check} alt="success" className="hidden" ref={alertRefs.success} />
