@@ -3,7 +3,7 @@ import Aos from "aos"
 import 'aos/dist/aos.css'
 import Bachgroundline from "./Bachgroundline"
 
-// function to import all images from images directory
+// function to import all images from images folder
 function importAll(dir) {
     let images = {}
     dir.keys().map((item, index) => {
@@ -29,7 +29,7 @@ function Contents() {
                 <img src={images['background.png']} alt="background" width={30} height={30} className="blur-lg" data-Aos='zoom-in' data-Aos-delay="150" />
                 <img src={images['home.png']} alt="home"width={30} height={30} className="absolute" data-Aos='zoom-in' />
             </div>
-            <div className="home-container">
+            <section className="home-container">
                 <div className="text-limeGreen pb-4 text-4xl" data-Aos="fade-right">
                     <h1>Welcome to my page</h1>
                 </div>
@@ -38,7 +38,7 @@ function Contents() {
                     <br />
                     and see all of my projects<span className="text-limeGreen">.</span>
                 </p>
-            </div>
+            </section>
 
             {/* About me section */}
             <div id="aboutImage" className="image">
@@ -46,7 +46,7 @@ function Contents() {
                 <img src={images['about.png']} alt="about" width={30} height={30} className="absolute" data-Aos="zoom-in" />
             </div>
 
-            <div className="about-container" id="about">
+            <section className="about-container" id="about">
                 <div className="text-limeGreen pb-4 text-4xl" data-Aos="fade-right">
                     <h1>About me</h1>
                 </div>
@@ -64,7 +64,7 @@ function Contents() {
                     Some of my favorite artists are Tyler, The Creator and A$AP Rocky. My favorite albums from them are
                     Igor and Testing<span className="text-limeGreen">.</span>
                 </p>
-            </div>
+            </section>
 
             {/* Projects section */}
             <div id="projectImage" className="image">
@@ -72,7 +72,7 @@ function Contents() {
                 <img src={images['projects.png']} alt="projects" width={30} height={30} className="absolute" data-Aos='zoom-in' />
             </div>
 
-            <div className="ml-60 w-[75rem] h-[40rem] -mt-16" id="projects">
+            <section className="ml-60 w-[75rem] h-[40rem] -mt-16" id="projects">
                 <div className="text-limeGreen pb-8 text-4xl" data-Aos="fade-right">
                     <h1>Projects</h1>
                 </div>
@@ -103,14 +103,14 @@ function Contents() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             {/* Thank you section */}
             <div id="thankImage" className="image">
                 <img src={images['background.png']} alt="background" width={30} height={30} className="blur-lg" data-Aos="zoom-in" data-Aos-delay="150" />
                 <img src={images['heart.png']} alt="heart" width={30} height={30} className="absolute" data-Aos="zoom-in" />
             </div>
-            <div className="thankYou-container">
+            <section className="thankYou-container">
                 <div className="text-limeGreen pb-4 text-4xl" data-Aos="fade-right">
                     <h1>Thank you for checking out my website!</h1>
                 </div>
@@ -130,9 +130,22 @@ function Contents() {
                         <span className="view-text">Back to top</span>
                     </a>
                 </div>
-            </div>
+            </section>
 
-            <footer className="w-full bg-darkGey h-44"></footer>
+            <footer className="w-full bg-darkGey h-60 mt-[50%] flex justify-center pt-10">
+                <div className="inline text-center text-2xl">
+                    <h1>Socials</h1>
+                    <div className="flex w-20 justify-between pt-2">
+                        <a href="https://github.com/Aleksi1212">
+                            <img src={images['github.png']} alt="github" id="github" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/aleksi-noro-8ba447249/">
+                            <img src={images['linkedin.png']} alt="linkedin" id="linkedin" />
+                        </a>
+                    </div>
+                </div>
+                <p className="opacity-50 mt-40 -ml-[7rem] text-sm">Copyright © Aleksi Noro</p>
+            </footer>
         </>
     )
 }

@@ -23,6 +23,14 @@
         @apply hidden xl:flex
     }
 
+    .menu {
+        @apply flex h-10 w-10  mr-10 mt-10 flex-col justify-evenly cursor-pointer xl:hidden
+    }
+
+    .menu-line {
+        @apply block h-[4px] w-full rounded-[10px] bg-white
+    }
+
     .about-container, .home-container, .thankYou-container {
         @apply ml-60 -mt-16 h-96 p-3 w-[60rem]
     }
@@ -62,6 +70,10 @@
     .top-lines {
         @apply absolute top-0 overflow-hidden
     }
+}
+
+.menu {
+    transition: transform .4s ease-in-out;
 }
 
 #home {
@@ -234,7 +246,10 @@
 }
 /* view source button end */
 
-/* footer styles */
-footer {
-    margin-top: 50%;
+#github, #linkedin {
+    transition: transform .2s;
+}
+
+#github:hover, #linkedin:hover {
+    transform: scale(1.3);
 }

@@ -5,6 +5,15 @@ import Contactform from './Contactform'
 function Navbar() {
     const contactRef = useRef(null)
 
+    function rotateMenu() {
+        let menu = document.getElementById('menu')
+        if (menu.style.transform == 'rotate(90deg)') {
+            menu.style.transform = 'rotate(0deg)'
+        } else {
+            menu.style.transform = 'rotate(90deg)'
+        }
+    }
+
     return (
         <>
             <header className="navbar">
@@ -35,6 +44,12 @@ function Navbar() {
                             <a>Contact</a>
                         </button>
                     </div>
+                </div>
+                    
+                <div className='menu' id='menu' onClick={rotateMenu}>
+                    <span className='menu-line line1'></span>
+                    <span className='menu-line line2'></span>
+                    <span className='menu-line line3'></span>
                 </div>
             </header>
             <Contactform test={contactRef} />
