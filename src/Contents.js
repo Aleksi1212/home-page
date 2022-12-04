@@ -29,8 +29,8 @@ function Contents() {
                 <img src={images['background.png']} alt="background" width={30} height={30} className="blur-lg" data-Aos='zoom-in' data-Aos-delay="150" />
                 <img src={images['home.png']} alt="home"width={30} height={30} className="absolute" data-Aos='zoom-in' />
             </div>
-            <section className="home-container">
-                <div className="text-limeGreen pb-4 text-4xl" data-Aos="fade-right">
+            <section className="home-container bg-red-500">
+                <div className="text-limeGreen pb-4 xxxl:text-4xl xl:text-3xl" data-Aos="fade-right">
                     <h1>Welcome to my page</h1>
                 </div>
                 <p data-Aos="fade-right" data-Aos-delay="200">
@@ -46,8 +46,8 @@ function Contents() {
                 <img src={images['about.png']} alt="about" width={30} height={30} className="absolute" data-Aos="zoom-in" />
             </div>
 
-            <section className="about-container" id="about">
-                <div className="text-limeGreen pb-4 text-4xl" data-Aos="fade-right">
+            <section className="about-container bg-red-500" id="about">
+                <div className="text-limeGreen pb-4 xxxl:text-4xl xl:text-3xl" data-Aos="fade-right">
                     <h1>About me</h1>
                 </div>
                 <p data-Aos="fade-right" data-Aos-delay="200">
@@ -72,12 +72,13 @@ function Contents() {
                 <img src={images['projects.png']} alt="projects" width={30} height={30} className="absolute" data-Aos='zoom-in' />
             </div>
 
-            <section className="ml-60 w-[75rem] h-[40rem] -mt-16" id="projects">
+            <section className="ml-60 w-[75rem] h-[40rem] -mt-16 bg-red-500" id="projects">
                 <div className="text-limeGreen pb-8 text-4xl" data-Aos="fade-right">
                     <h1>Projects</h1>
                 </div>
 
                 <div className="project-container">
+
                     <div className="project" data-Aos="fade-right" data-Aos-delay="200">
                         <img src={images['database.png']} alt="database" />
                         <div className="projectinfo">
@@ -132,7 +133,7 @@ function Contents() {
                 </div>
             </section>
 
-            <footer className="w-full bg-darkGey h-60 mt-[50%] flex justify-center pt-10">
+            <footer className="w-full bg-darkGrey h-60 mt-[50%] flex justify-center pt-10">
                 <div className="inline text-center text-2xl">
                     <h1>Socials</h1>
                     <div className="flex w-20 justify-between pt-2">

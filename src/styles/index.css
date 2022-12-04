@@ -24,7 +24,11 @@
     }
 
     .menu {
-        @apply flex h-10 w-10  mr-10 mt-10 flex-col justify-evenly cursor-pointer xl:hidden
+        @apply w-[10rem] h-[17rem] bg-darkGrey absolute -mt-[20rem] flex justify-center items-center rounded-bl-[15px]
+    }
+
+    .menubars {
+        @apply flex h-10 w-10 mr-14 mt-10 flex-col justify-evenly cursor-pointer absolute xl:hidden
     }
 
     .menu-line {
@@ -32,7 +36,7 @@
     }
 
     .about-container, .home-container, .thankYou-container {
-        @apply ml-60 -mt-16 h-96 p-3 w-[60rem]
+        @apply xl:ml-60 ml-16 -mt-16 h-96 p-3 xxxl:w-[60rem] xl:w-[40rem] w-[15rem]
     }
 
     .project-container {
@@ -44,7 +48,7 @@
     }
 
     .projectinfo {
-        @apply w-[24rem] h-[7rem] mt-[28rem] bg-lighterGray border-t-8 border-limeGreen pl-5 pt-5
+        @apply w-[24rem] h-[7rem] mt-[28rem] bg-lighterGray border-t-4 border-limeGreen pl-5 pt-5
     }
 
     .project img {
@@ -52,7 +56,7 @@
     }
 
     .home-container p, .about-container p, .thankYou-container p {
-        @apply text-2xl whitespace-normal
+        @apply xxxl:text-2xl xl:text-xl whitespace-normal
     }
 
     .projectinfo h1 {
@@ -68,20 +72,20 @@
     }
 
     .top-lines {
-        @apply absolute top-0 overflow-hidden
+        @apply hidden xl:inline absolute top-0 overflow-hidden
+    }
+
+    #projectImage, #aboutImage, #thankImage {
+        @apply mt-[35%]
     }
 }
 
 .menu {
+    transition: margin-top .4s ease-in-out;
+}
+
+.menubars {
     transition: transform .4s ease-in-out;
-}
-
-#home {
-    width: 600px;
-}
-
-#projectImage, #aboutImage, #thankImage {
-    margin-top: 35%;
 }
 
 /* form styles start */

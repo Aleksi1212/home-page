@@ -52,7 +52,7 @@ function Contact(props) {
 
     function showLoad() {
         let values = formRef.current
-        if (values.name.value != '' && values.email.value != '' && values.message.value != '') {
+        if (values.name.value !== '' && values.email.value !== '' && values.message.value !== '') {
             document.getElementById('load').style.display = 'inline-block'
         } else {
             console.log('form not filled');

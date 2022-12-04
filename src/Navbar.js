@@ -6,11 +6,15 @@ function Navbar() {
     const contactRef = useRef(null)
 
     function rotateMenu() {
+        let menubars = document.getElementById('menubars')
         let menu = document.getElementById('menu')
-        if (menu.style.transform == 'rotate(90deg)') {
-            menu.style.transform = 'rotate(0deg)'
+
+        if (menubars.style.transform === 'rotate(90deg)') {
+            menubars.style.transform = 'rotate(0deg)'
+            menu.style.marginTop = '-20rem'
         } else {
-            menu.style.transform = 'rotate(90deg)'
+            menubars.style.transform = 'rotate(90deg)'
+            menu.style.marginTop = '0rem'
         }
     }
 
@@ -46,7 +50,15 @@ function Navbar() {
                     </div>
                 </div>
                     
-                <div className='menu' id='menu' onClick={rotateMenu}>
+                <div className='menu' id='menu'>
+                    <ul className='ml-4 mt-20'>
+                        <li className='pb-4'><a href='#about'>About</a></li>
+                        <li ><a href='#projects'>Projects</a></li>
+                        <li className='pt-4' ><a>Contact</a></li>
+                    </ul>
+                </div>
+
+                <div className='menubars' id='menubars' onClick={rotateMenu}>
                     <span className='menu-line line1'></span>
                     <span className='menu-line line2'></span>
                     <span className='menu-line line3'></span>

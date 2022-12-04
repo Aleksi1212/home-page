@@ -8,11 +8,13 @@ module.exports = {
       sm: '480px',
       md: '768px',
       lg: '976px',
-      xl: '1440px'
+      xl: '1080px',
+      xxl: '1440px',
+      xxxl: '1920px'
     },
     extend: {
       colors: {
-        darkGey: '#141C24',
+        darkGrey: '#141C24',
         lighterGray: '#2f2f2f',
         limeGreen: '#75d77e',
         veryDarkBlue: '#0f1024'
