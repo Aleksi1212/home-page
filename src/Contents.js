@@ -72,12 +72,12 @@ function Contents() {
                 <img src={images['projects.png']} alt="projects" width={30} height={30} className="absolute" data-Aos='zoom-in' />
             </div>
 
-            <section className="ml-60 w-[75rem] h-[40rem] -mt-16 bg-red-500" id="projects">
-                <div className="text-limeGreen pb-8 text-4xl" data-Aos="fade-right">
+            <section className="project-container bg-red-500" id="projects">
+                <div className="text-limeGreen pb-8 xxxl:text-4xl xl:text-3xl" data-Aos="fade-right">
                     <h1>Projects</h1>
                 </div>
 
-                <div className="project-container">
+                <div className="project-cards bg-blue-500">
 
                     <div className="project" data-Aos="fade-right" data-Aos-delay="200">
                         <img src={images['database.png']} alt="database" />
@@ -111,8 +111,8 @@ function Contents() {
                 <img src={images['background.png']} alt="background" width={30} height={30} className="blur-lg" data-Aos="zoom-in" data-Aos-delay="150" />
                 <img src={images['heart.png']} alt="heart" width={30} height={30} className="absolute" data-Aos="zoom-in" />
             </div>
-            <section className="thankYou-container">
-                <div className="text-limeGreen pb-4 text-4xl" data-Aos="fade-right">
+            <section className="thankYou-container bg-red-500">
+                <div className="text-limeGreen pb-4 xxxl:text-4xl xl:text-3xl" data-Aos="fade-right">
                     <h1>Thank you for checking out my website!</h1>
                 </div>
                 <p data-Aos="fade-right" data-Aos-delay="200">

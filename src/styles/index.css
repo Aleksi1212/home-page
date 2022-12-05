@@ -36,39 +36,51 @@
     }
 
     .about-container, .home-container, .thankYou-container {
-        @apply xl:ml-60 ml-16 -mt-16 h-96 p-3 xxxl:w-[60rem] xl:w-[40rem] w-[15rem]
+        @apply xl:ml-60 ml-20 -mt-16 h-96 p-3 xl:w-[52%] w-[15rem]
     }
 
     .project-container {
-        @apply h-[30rem] w-[75rem] flex justify-between absolute
+        @apply xl:ml-60 ml-20 w-[62%] xxxl:h-[40rem] xl:h-[30rem] -mt-16
+    }
+
+    .project-cards {
+        @apply h-[60%] w-[62%] flex justify-between absolute
     }
 
     .project {
-        @apply h-[35rem] w-[24rem] rounded-[15px] overflow-hidden
-    }
-
-    .projectinfo {
-        @apply w-[24rem] h-[7rem] mt-[28rem] bg-lighterGray border-t-4 border-limeGreen pl-5 pt-5
+        @apply w-[32%] h-[98%] rounded-[15px] overflow-hidden
     }
 
     .project img {
-        @apply object-cover h-[35rem] absolute cursor-pointer
+        @apply object-cover h-full absolute cursor-pointer
+    }
+
+    .project img:hover {
+        @apply -mt-[26%]
+    }
+
+    .projectinfo {
+        @apply  pl-[5%] xxxl:pt-[4%] xl:pt-[2%] w-full h-[20%] mt-[120%]  bg-lighterGray border-t-4 border-limeGreen
     }
 
     .home-container p, .about-container p, .thankYou-container p {
-        @apply xxxl:text-2xl xl:text-xl whitespace-normal
+        @apply xl:text-[140%] whitespace-normal
     }
 
     .projectinfo h1 {
-        @apply text-2xl
+        @apply xxl:text-2xl xl:text-[100%]
     }
 
     .projectinfo p {
-        @apply text-lg whitespace-normal text-[grey]
+        @apply xxxl:text-lg xl:text-[90%] whitespace-normal text-[grey]
     }
 
     .image {
-        @apply w-96 ml-40 flex justify-start py-5 bg-veryDarkBlue w-8
+        @apply ml-12 xl:ml-40 flex justify-start py-5 bg-veryDarkBlue w-8
+    }
+
+    .image img {
+        @apply xl:w-[30px] xl:h-[30px] w-[20px] h-[20px]
     }
 
     .top-lines {
@@ -76,7 +88,7 @@
     }
 
     #projectImage, #aboutImage, #thankImage {
-        @apply mt-[35%]
+        @apply xxxl:mt-[35%] xl:mt-[50%]
     }
 }
 
