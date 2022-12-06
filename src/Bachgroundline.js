@@ -41,7 +41,7 @@ class Background extends React.Component {
                 </div>
 
                 <div className="line hidden xl:flex">
-                    <svg className="w-[5px] xxxl:h-[3375px] xxl:h-[2900px] xl:h-[2800px]" viewBox="0 0 2 1667" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-[5px] xxxl:h-[3375px] xl:h-[3275px]" viewBox="0 0 2 1667" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path id="linePath" d="M 1.2745 -0.0091 V 3589" stroke="#77D75E" strokeWidth={2.5}/>
                     </svg>
                 </div>

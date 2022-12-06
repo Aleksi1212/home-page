@@ -51,15 +51,6 @@
     stroke-dashoffset: 0;
 }
 
-.loader {
-    position: absolute;
-    margin-top: 35rem;
-    margin-left: 17rem;
-    display: none;
-    width: 40px;
-    height: 40px;
-}
-
 .loader:after {
     content: " ";
     display: block;
@@ -86,6 +77,30 @@
     transition: margin-top .5s;
 }
 
-/* .project img:hover {
-    margin-top: -7rem;
-} */
+#form-container {
+    transition: right 2s;
+}
+
+.alt-close-form {
+    transition: all .2s ease-in-out;
+}
+
+.alt-close-form:hover {
+    transform: translate3d(0px, -29px, 0px);
+}
+
+.form-input {
+    background: #3f3f3f;
+}
+
+.alt-send-button {
+    transition: all .2s ease-in-out;
+}
+
+.alt-send-button:hover {
+    transform: translate3d(0px, -29px, 0px);
+}
+
+.alert {
+    transition: margin-left 1s;
+}

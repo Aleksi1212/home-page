@@ -21,7 +21,8 @@ function Contact(props) {
         emailjs.sendForm('service_te6k1gm', 'template_qgqfqcg', formRef.current, 'Boi87gFFHORJ-a-si')
             .then((res) => {
                 formRef.current.reset()
-                alertRefs.alertBox.current.style.marginLeft = '10rem'
+
+                alertRefs.alertBox.current.style.marginLeft = '7rem'
                 alertRefs.success.current.style.display = 'flex'
                 alertRefs.status.current.innerHTML = 'Succesfully sent'
                 document.getElementById('load').style.display = 'none'
@@ -32,7 +33,8 @@ function Contact(props) {
 
             }, (err) => {
                 formRef.current.reset()
-                alertRefs.alertBox.current.style.marginLeft = '10rem'
+
+                alertRefs.alertBox.current.style.marginLeft = '7rem'
                 alertRefs.header.current.style.backgroundColor = 'red'
                 alertRefs.error.current.style.display = 'flex'
                 alertRefs.status.current.innerHTML = 'An error occurred'
@@ -83,13 +85,13 @@ function Contact(props) {
             <div id="form-container">
 
                 <button id="close-form">
-                    <div className="alt-close-form">
-                        <img src={close} alt="close" />
-                        <span className="close-text">Close</span>
+                    <div className="alt-close-form w-[50px] h-[35px]">
+                        <img src={close} alt="close" className="ml-[8px]" />
+                        <span className="block mt-[5px]">Close</span>
                     </div>
                 </button>
 
-                <h1 className="absolute mt-28 text-3xl">Contact me</h1>
+                <h1 className="absolute xxxl:mt-28 xl:mt-20 xxxl:text-3xl xl:text-2xl">Contact me</h1>
 
                 <div id="form-wrapper">
                     <form id="contact-form" ref={formRef} onSubmit={sendEmail} >
@@ -109,9 +111,9 @@ function Contact(props) {
                         </textarea>
 
                         <button className="form-submit" type="submit" onClick={showLoad}>
-                            <div className="alt-send-button">
-                                <img src={plane} alt="plane" width={20} height={20} />
-                                <span className="send-text">Send</span>
+                            <div className="alt-send-button w-[20rem] h-[30px] pt-[5px]">
+                                <img src={plane} alt="plane" className="ml-[9.5rem] w-[20px] h-[20px]" />
+                                <span className="block mt-[8px]">Send</span>
                             </div>
                         </button>
 

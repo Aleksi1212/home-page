@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useRef } from "react"
 import Aos from "aos"
 import 'aos/dist/aos.css'
 import Bachgroundline from "./Bachgroundline"
@@ -16,6 +16,25 @@ function importAll(dir) {
 function Contents() {
     useEffect(() => {
         Aos.init()
+
+        let showMore = document.getElementById('show-more')
+        let showLess = document.getElementById('show-less')
+        let about = document.getElementById('about')
+        let dots = document.getElementById('dots')
+
+        showMore.addEventListener('click', () => {
+            about.style.overflow = 'visible'
+            showMore.style.display = 'none'
+            dots.style.display = 'none'
+            showLess.style.display = 'flex'
+        })
+
+        showLess.addEventListener('click', () => {
+            about.style.overflow = 'hidden'
+            showMore.style.display = 'flex'
+            dots.style.display = 'flex'
+            showLess.style.display = 'none'
+        })
     }, [])
 
     const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/))
@@ -29,8 +48,8 @@ function Contents() {
                 <img src={images['background.png']} alt="background" width={30} height={30} className="blur-lg" data-Aos='zoom-in' data-Aos-delay="150" />
                 <img src={images['home.png']} alt="home"width={30} height={30} className="absolute" data-Aos='zoom-in' />
             </div>
-            <section className="home-container bg-red-500">
-                <div className="text-limeGreen pb-4 xxxl:text-4xl xl:text-3xl" data-Aos="fade-right">
+            <section className="home-container">
+                <div className="section-header" data-Aos="fade-right">
                     <h1>Welcome to my page</h1>
                 </div>
                 <p data-Aos="fade-right" data-Aos-delay="200">
@@ -46,10 +65,14 @@ function Contents() {
                 <img src={images['about.png']} alt="about" width={30} height={30} className="absolute" data-Aos="zoom-in" />
             </div>
 
-            <section className="about-container bg-red-500" id="about">
-                <div className="text-limeGreen pb-4 xxxl:text-4xl xl:text-3xl" data-Aos="fade-right">
+            <section className="about-container" id="about">
+                <div className="section-header" data-Aos="fade-right">
                     <h1>About me</h1>
                 </div>
+                <p className="show-more" id="show-more" data-Aos="fade-right" data-Aos-delay="200">Show more</p>
+                <p className="show-more mt-[33.5rem] w-[4.2rem] hidden" id="show-less">Show less</p>
+                <p className="mt-[19.5rem] ml-[12rem] absolute xl:hidden" id="dots" data-Aos="fade-right">...</p>
+
                 <p data-Aos="fade-right" data-Aos-delay="200">
                     Hello<span className="text-limeGreen">!</span> My name is Aleksi I'm 17 years old and I've been studying
                     computer science at Helsinki Business College for roughly 2 years.
@@ -72,14 +95,14 @@ function Contents() {
                 <img src={images['projects.png']} alt="projects" width={30} height={30} className="absolute" data-Aos='zoom-in' />
             </div>
 
-            <section className="project-container bg-red-500" id="projects">
-                <div className="text-limeGreen pb-8 xxxl:text-4xl xl:text-3xl" data-Aos="fade-right">
+            <section className="project-container" id="projects">
+                <div className="text-limeGreen xl:pb-8 pb-4 xxxl:text-4xl xl:text-3xl" data-Aos="fade-right">
                     <h1>Projects</h1>
                 </div>
 
-                <div className="project-cards bg-blue-500">
+                <div className="project-cards">
 
-                    <div className="project" data-Aos="fade-right" data-Aos-delay="200">
+                    <div className="project xl:mb-0 mb-2" data-Aos="fade-right" data-Aos-delay="200">
                         <img src={images['database.png']} alt="database" />
                         <div className="projectinfo">
                             <h1>Car database</h1>
@@ -87,7 +110,7 @@ function Contents() {
                         </div>
                     </div>
 
-                    <div className="project" data-Aos="fade-right" data-Aos-delay="400">
+                    <div className="project xl:mb-0 mb-2" data-Aos="fade-right" data-Aos-delay="400">
                         <img src={images['api.png']} alt="api" />
                         <div className="projectinfo">
                             <h1>RESTful api</h1>
@@ -111,8 +134,8 @@ function Contents() {
                 <img src={images['background.png']} alt="background" width={30} height={30} className="blur-lg" data-Aos="zoom-in" data-Aos-delay="150" />
                 <img src={images['heart.png']} alt="heart" width={30} height={30} className="absolute" data-Aos="zoom-in" />
             </div>
-            <section className="thankYou-container bg-red-500">
-                <div className="text-limeGreen pb-4 xxxl:text-4xl xl:text-3xl" data-Aos="fade-right">
+            <section className="thankYou-container">
+                <div className="section-header" data-Aos="fade-right">
                     <h1>Thank you for checking out my website!</h1>
                 </div>
                 <p data-Aos="fade-right" data-Aos-delay="200">
@@ -133,8 +156,9 @@ function Contents() {
                 </div>
             </section>
 
-            <footer className="w-full bg-darkGrey h-60 mt-[50%] flex justify-center pt-10">
-                <div className="inline text-center text-2xl">
+            {/* footer */}
+            <footer className="footer">
+                <div className="inline text-center xl:text-2xl text-xl xl:ml-0 ml-10">
                     <h1>Socials</h1>
                     <div className="flex w-20 justify-between pt-2">
                         <a href="https://github.com/Aleksi1212">

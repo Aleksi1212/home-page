@@ -19,6 +19,10 @@
         @apply top-0 flex justify-end w-screen
     }
 
+    .section-header {
+        @apply text-limeGreen xl:pb-4 pb-2 xxxl:text-4xl xl:text-3xl
+    }
+
     .animation {
         @apply hidden xl:flex
     }
@@ -36,23 +40,23 @@
     }
 
     .about-container, .home-container, .thankYou-container {
-        @apply xl:ml-60 ml-20 -mt-16 h-96 p-3 xl:w-[52%] w-[15rem]
+        @apply xl:ml-60 ml-20 xl:-mt-16 -mt-14 h-96 p-3 xl:w-[52%] w-[15rem] xl:overflow-visible overflow-hidden
     }
 
     .project-container {
-        @apply xl:ml-60 ml-20 w-[62%] xxxl:h-[40rem] xl:h-[30rem] -mt-16
+        @apply xl:ml-60 ml-20 xl:-mt-16 -mt-12 w-[62%] xxxl:h-[40rem] xl:h-[30rem] h-[23rem] 
     }
 
     .project-cards {
-        @apply h-[60%] w-[62%] flex justify-between absolute
+        @apply xl:h-[60%] w-[62%] h-[37%] xl:flex xl:justify-between absolute inline
     }
 
     .project {
-        @apply w-[32%] h-[98%] rounded-[15px] overflow-hidden
+        @apply xl:w-[32%] xl:h-[98%] w-full h-[30%] rounded-[15px] overflow-hidden
     }
 
     .project img {
-        @apply object-cover h-full absolute cursor-pointer
+        @apply object-cover h-full w-full absolute cursor-pointer
     }
 
     .project img:hover {
@@ -60,7 +64,7 @@
     }
 
     .projectinfo {
-        @apply  pl-[5%] xxxl:pt-[4%] xl:pt-[2%] w-full h-[20%] mt-[120%]  bg-lighterGray border-t-4 border-limeGreen
+        @apply  pl-[5%] xxxl:pt-[4%] xl:pt-[2%] w-full h-[20%] mt-[120%] bg-lighterGray border-t-4 border-limeGreen xl:inline-block hidden
     }
 
     .home-container p, .about-container p, .thankYou-container p {
@@ -88,7 +92,47 @@
     }
 
     #projectImage, #aboutImage, #thankImage {
-        @apply xxxl:mt-[35%] xl:mt-[50%]
+        @apply xxxl:mt-[35%] xl:mt-[50%] mt-[70%]
+    }
+
+    #form-container {
+        @apply top-0 -right-[35rem] h-full xxxl:w-[35rem] xl:w-[30rem] fixed bg-darkGrey flex justify-center
+    }
+
+    #close-form {
+        @apply absolute flex justify-center mt-[1.5rem] xxxl:mr-[30rem] xl:mr-[25rem] w-[50px] h-[35px] overflow-hidden
+    }
+
+    #form-wrapper {
+        @apply xxxl:mt-[15rem] xxl:mt-[13rem] xl:mt-[10rem] flex flex-row justify-center w-[60%] h-[34%]
+    }
+
+    .form-input {
+        @apply w-full h-[55%] mt-[.5rem] rounded-[5px] p-[5px]
+    }
+
+    .form-submit {
+        @apply flex justify-center bg-limeGreen cursor-pointer w-full h-[30px] mt-[.5rem] rounded-[5px] overflow-hidden
+    }
+
+    .alert {
+        @apply absolute w-[20rem] h-[100px] xxxl:mt-[47rem] xxl:mt-[37rem] xl:mt-[35rem] xxxl:ml-[55rem] xl:ml-[50rem] rounded-[5px] bg-[#2f2f2f] inline
+    }
+
+    .alertheader {
+        @apply w-[20rem] h-[22px] rounded-bl-none rounded-br-none rounded-tl-[5px] rounded-tr-[5px] p-[5px] flex bg-limeGreen
+    }
+
+    .loader {
+        @apply absolute xxxl:mt-[35rem] xxl:mt-[32rem] xl:mt-[27rem] ml-[17rem] w-[40px] h-[40px] hidden
+    }
+
+    .show-more {
+        @apply w-[4.7rem] h-[1.2rem] absolute mt-[21.5rem] xl:hidden text-limeGreen cursor-pointer text-[15px] border-b-[1px] border-limeGreen
+    }
+
+    .footer {
+        @apply w-full bg-darkGrey h-60 mt-[50%] flex justify-center pt-10
     }
 }
 
@@ -100,122 +144,7 @@
     transition: transform .4s ease-in-out;
 }
 
-/* form styles start */
-#form-container {
-    top: 0;
-    right: -35rem;
-    height: 100%;
-    width: 35rem;
-    position: fixed;
-    background-color: #141C24;
-    display: flex;
-    justify-content: center;
-    transition: right 2s;
-}
-
-#close-form {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    margin-top: 1.5rem;
-    margin-right: 30rem;
-    width: 50px;
-    height: 35px;
-    overflow: hidden;
-}
-
-.alt-close-form {
-    width: 50px;
-    height: 35px;
-    transition: all .2s ease-in-out;
-}
-
-.alt-close-form img {
-    margin-left: 8px;
-}
-
-.close-text {
-    display: block;
-    margin-top: 5px;
-}
-
-.alt-close-form:hover {
-    transform: translate3d(0px, -29px, 0px);
-}
-
-#form-wrapper {
-    margin-top: 15rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 20rem;
-    height: 20rem;
-}
-
-.form-input {
-    width: 20rem;
-    margin-top: .5rem;
-    border-radius: 5px;
-    background: #3f3f3f;
-    padding: 5px;
-}
-
-.form-submit {
-    display: flex;
-    justify-content: center;
-    background-color: #77d75e;
-    cursor: pointer;
-    width: 20rem;
-    height: 30px;
-    margin-top: .5rem;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.alt-send-button {
-    width: 20rem;
-    height: 30px;
-    padding-top: 5px;
-    transition: all .2s ease-in-out;
-}
-
-.alt-send-button img {
-    margin-left: 9.5rem;
-}
-
-.send-text {
-    display: block;
-    margin-top: 8px;
-}
-
-.alt-send-button:hover {
-    transform: translate3d(0px, -29px, 0px);
-}
-/* form styles end */
-
-/* alert styles start */
-.alert {
-    position: absolute;
-    width: 20rem;
-    height: 100px;
-    margin-top: 47rem;
-    margin-left: 55rem;
-    border-radius: 5px;
-    background-color: #2f2f2f;
-    display: inline;
-    transition: margin-left 1s;
-}
-
-.alertheader {
-    width: 20rem;
-    height: 22px;
-    border-radius: 5px 5px 0 0;
-    padding-left: 5px;
-    display: flex;
-    background-color: #77d75e;
-}
-/* alert styles end */
-
+/* svg lines styles start */
 .top-lines #line1 {
     margin-left: 10.75rem;
     margin-top: -0.1rem;
@@ -226,7 +155,6 @@
     margin-left: -2rem;
 }
 
-/* svg lines styles start */
 .line {
     position: absolute;
     overflow: hidden;
