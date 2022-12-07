@@ -16,7 +16,7 @@
     }
 
     .navbar {
-        @apply top-0 flex justify-end w-screen
+        @apply top-0 flex xl:justify-end justify-start w-screen
     }
 
     .section-header {
@@ -28,23 +28,23 @@
     }
 
     .menu {
-        @apply w-[10rem] h-[17rem] bg-darkGrey absolute -mt-[20rem] flex justify-center items-center rounded-bl-[15px]
+        @apply w-full h-[7.5rem] xl:hidden flex justify-center items-center absolute -ml-[30rem]
     }
 
     .menubars {
-        @apply flex h-10 w-10 mr-14 mt-10 flex-col justify-evenly cursor-pointer absolute xl:hidden
+        @apply flex h-10 w-10 ml-8 mt-10 flex-col justify-evenly cursor-pointer absolute xl:hidden
     }
 
     .menu-line {
         @apply block h-[4px] w-full rounded-[10px] bg-white
     }
 
-    .about-container, .home-container, .thankYou-container {
+    .home-container, .about-container, .thankYou-container, .form-container {
         @apply xl:ml-60 ml-20 xl:-mt-16 -mt-14 h-96 p-3 xl:w-[52%] w-[15rem] xl:overflow-visible overflow-hidden
     }
 
     .project-container {
-        @apply xl:ml-60 ml-20 xl:-mt-16 -mt-12 w-[62%] xxxl:h-[40rem] xl:h-[30rem] h-[23rem] 
+        @apply xl:ml-60 ml-20 xl:-mt-16 -mt-[2.7rem] w-[62%] xxxl:h-[40rem] xl:h-[30rem] h-[23rem] 
     }
 
     .project-cards {
@@ -80,7 +80,7 @@
     }
 
     .image {
-        @apply ml-12 xl:ml-40 flex justify-start py-5 bg-veryDarkBlue w-8
+        @apply ml-12 xl:ml-40 flex justify-start py-5 bg-veryDarkBlue w-8 xxxl:mt-[35%] xl:mt-[50%] mt-[70%]
     }
 
     .image img {
@@ -91,24 +91,16 @@
         @apply hidden xl:inline absolute top-0 overflow-hidden
     }
 
-    #projectImage, #aboutImage, #thankImage {
-        @apply xxxl:mt-[35%] xl:mt-[50%] mt-[70%]
-    }
-
-    #form-container {
-        @apply top-0 -right-[35rem] h-full xxxl:w-[35rem] xl:w-[30rem] fixed bg-darkGrey flex justify-center
-    }
-
-    #close-form {
-        @apply absolute flex justify-center mt-[1.5rem] xxxl:mr-[30rem] xl:mr-[25rem] w-[50px] h-[35px] overflow-hidden
-    }
-
     #form-wrapper {
-        @apply xxxl:mt-[15rem] xxl:mt-[13rem] xl:mt-[10rem] flex flex-row justify-center w-[60%] h-[34%]
+        @apply absolute flex flex-row justify-start w-[52%] h-[34%]
     }
 
     .form-input {
-        @apply w-full h-[55%] mt-[.5rem] rounded-[5px] p-[5px]
+        @apply w-full mt-[.5rem] p-[5px] bg-transparent border-b-2
+    }
+
+    .form-input:focus {
+        @apply border-limeGreen border-b-[3px]
     }
 
     .form-submit {
@@ -116,19 +108,31 @@
     }
 
     .alert {
-        @apply absolute w-[20rem] h-[100px] xxxl:mt-[47rem] xxl:mt-[37rem] xl:mt-[35rem] xxxl:ml-[55rem] xl:ml-[50rem] rounded-[5px] bg-[#2f2f2f] inline
+        @apply absolute w-[17rem] h-[85px] -ml-[20rem] rounded-[5px] bg-[#2f2f2f] inline
     }
 
     .alertheader {
-        @apply w-[20rem] h-[22px] rounded-bl-none rounded-br-none rounded-tl-[5px] rounded-tr-[5px] p-[5px] flex bg-limeGreen
+        @apply w-[17rem] h-[18px] rounded-bl-none rounded-br-none rounded-tl-[5px] rounded-tr-[5px] items-center pl-[5px] flex bg-limeGreen
     }
 
     .loader {
-        @apply absolute xxxl:mt-[35rem] xxl:mt-[32rem] xl:mt-[27rem] ml-[17rem] w-[40px] h-[40px] hidden
+        @apply absolute ml-[33rem] -mt-[7rem] w-[40px] h-[40px] hidden
     }
 
     .show-more {
-        @apply w-[4.7rem] h-[1.2rem] absolute mt-[21.5rem] xl:hidden text-limeGreen cursor-pointer text-[15px] border-b-[1px] border-limeGreen
+        @apply w-[4.3rem] h-[1.2rem] absolute mt-[21.5rem] xl:hidden text-limeGreen cursor-pointer text-[15px] border-b-[1px] border-limeGreen
+    }
+
+    .buttons {
+        @apply flex justify-between mt-[1.5rem] mr-[30rem] w-[200px] h-[35px] xl:overflow-hidden overflow-visible
+    }
+
+    .alt-button {
+        @apply h-[30px] cursor-pointer
+    }
+
+    .view-text {
+        @apply block mt-[5px] xl:text-base text-sm
     }
 
     .footer {
@@ -137,7 +141,7 @@
 }
 
 .menu {
-    transition: margin-top .4s ease-in-out;
+    transition: margin-left .4s ease-in-out;
 }
 
 .menubars {
@@ -158,42 +162,6 @@
 .line {
     position: absolute;
     overflow: hidden;
-    margin-top: 15rem;
     margin-left: 10.75rem;
 }
 /* svg lines styles end */
-
-/* view page source button start */
-.buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 1.5rem;
-    margin-right: 30rem;
-    width: 200px;
-    height: 35px;
-    overflow: hidden;
-}
-
-.alt-button {
-    height: 30px;
-    cursor: pointer;
-    transition: all .2s ease-in-out;
-}
-
-.view-text {
-    display: block;
-    margin-top: 5px;
-}
-
-.alt-button:hover {
-    transform: translate3d(0px, -29px, 0px);
-}
-/* view source button end */
-
-#github, #linkedin {
-    transition: transform .2s;
-}
-
-#github:hover, #linkedin:hover {
-    transform: scale(1.3);
-}

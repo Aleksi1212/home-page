@@ -1,6 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import emailjs from '@emailjs/browser'
 
+import form from './images/form.png'
+import background from './images/background.png'
 import plane from './images/paperplane.png'
 import close from './images/close.png'
 import check from './images/check.png'
@@ -22,7 +24,7 @@ function Contact(props) {
             .then((res) => {
                 formRef.current.reset()
 
-                alertRefs.alertBox.current.style.marginLeft = '7rem'
+                alertRefs.alertBox.current.style.marginLeft = '10rem'
                 alertRefs.success.current.style.display = 'flex'
                 alertRefs.status.current.innerHTML = 'Succesfully sent'
                 document.getElementById('load').style.display = 'none'
@@ -34,7 +36,7 @@ function Contact(props) {
             }, (err) => {
                 formRef.current.reset()
 
-                alertRefs.alertBox.current.style.marginLeft = '7rem'
+                alertRefs.alertBox.current.style.marginLeft = '10rem'
                 alertRefs.header.current.style.backgroundColor = 'red'
                 alertRefs.error.current.style.display = 'flex'
                 alertRefs.status.current.innerHTML = 'An error occurred'
@@ -47,7 +49,7 @@ function Contact(props) {
 
         const clearAlert = () => {
             const clear = setTimeout(() => {
-                alertRefs.alertBox.current.style.marginLeft = '55rem'
+                alertRefs.alertBox.current.style.marginLeft = '-20rem'
             }, 3000)
         }
     }
@@ -59,55 +61,30 @@ function Contact(props) {
         } else {
             console.log('form not filled');
         }
-    } 
-    
-    useEffect(() => {
-        let formContent = {
-            contact: props.test.current,
-            formContainer: document.getElementById('form-container'),
-            closeBtn: document.getElementById('close-form'),
-        }
-        
-        formContent.contact.addEventListener('click', () => {
-            formContent.formContainer.style.right = '0'
-        })
-
-        formContent.closeBtn.addEventListener('click', () => {
-            formContent.formContainer.style.right = '-35rem'
-        })
-
-
-    }, [props])
-
+    }
 
     return (
         <>
-            <div id="form-container">
+            <div className="image">
+                <img src={background} alt="background" width={30} height={30} className="blur-lg" data-Aos="zoom-in" data-Aos-delay="150" />
+                <img src={form} alt="heart" width={30} height={30} className="absolute" data-Aos="zoom-in" />
+            </div>
 
-                <button id="close-form">
-                    <div className="alt-close-form w-[50px] h-[35px]">
-                        <img src={close} alt="close" className="ml-[8px]" />
-                        <span className="block mt-[5px]">Close</span>
-                    </div>
-                </button>
-
-                <h1 className="absolute xxxl:mt-28 xl:mt-20 xxxl:text-3xl xl:text-2xl">Contact me</h1>
-
-                <div id="form-wrapper">
+            <div className="form-container">
+                <div className="section-header" data-Aos="fade-right">
+                    <h1>Contact me</h1>
+                </div>
+                <div id="form-wrapper" data-Aos="fade-right" data-Aos-delay="200">
                     <form id="contact-form" ref={formRef} onSubmit={sendEmail} >
-                        <div className="form-group">
-                            <div className="col-sm-12">
-                                <input type="text" className="form-input" id="name" placeholder="Name" name="name" required />
-                            </div>
+                        <div className="col-sm-12">
+                            <input type="text" className="form-input" id="name" placeholder="Name" name="name" required />
                         </div>
 
-                        <div className="form-group">
-                            <div className="col-sm-12">
-                                <input type="text" className="form-input" id="email" placeholder="Email" name="email" required />
-                            </div>
+                        <div className="col-sm-12">
+                            <input type="text" className="form-input" id="email" placeholder="Email" name="email" required />
                         </div>
 
-                        <textarea className="form-input" rows={7} placeholder="Message" name="message" required >
+                        <textarea className="form-input" placeholder="Message" name="message" required >
                         </textarea>
 
                         <button className="form-submit" type="submit" onClick={showLoad}>
@@ -116,19 +93,19 @@ function Contact(props) {
                                 <span className="block mt-[8px]">Send</span>
                             </div>
                         </button>
-
                     </form>
+
                 </div>
 
-                <div className="loader" id="load"></div>
+            </div>
+            <div className="loader" id="load"></div>
 
-                <div className="alert" ref={alertRefs.alertBox}>
-                    <div className="alertheader" ref={alertRefs.header}>
-                        <img src={check} alt="success" className="hidden" ref={alertRefs.success} />
-                        <img src={close} alt="denial" className="hidden" ref={alertRefs.error} />
-                    </div>
-                    <h1 ref={alertRefs.status} className="mt-6 ml-2"></h1>
+            <div className="alert" ref={alertRefs.alertBox}>
+                <div className="alertheader" ref={alertRefs.header}>
+                    <img src={check} alt="success" className="hidden w-4 h-4" ref={alertRefs.success} />
+                    <img src={close} alt="denial" className="hidden w-4 h-4" ref={alertRefs.error} />
                 </div>
+                <h1 ref={alertRefs.status} className="mt-6 ml-2"></h1>
             </div>
         </>
     )

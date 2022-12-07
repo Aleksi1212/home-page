@@ -1,9 +1,6 @@
-import { useRef } from 'react'
 import Progressbar from 'react-progressbar-on-scroll'
-import Contactform from './Contactform'
 
 function Navbar() {
-    const contactRef = useRef(null)
 
     function rotateMenu() {
         let menubars = document.getElementById('menubars')
@@ -11,10 +8,10 @@ function Navbar() {
 
         if (menubars.style.transform === 'rotate(90deg)') {
             menubars.style.transform = 'rotate(0deg)'
-            menu.style.marginTop = '-20rem'
+            menu.style.marginLeft = '-30rem'
         } else {
             menubars.style.transform = 'rotate(90deg)'
-            menu.style.marginTop = '0rem'
+            menu.style.marginLeft = '0rem'
         }
     }
 
@@ -44,17 +41,17 @@ function Navbar() {
                         <svg height={70} width={200} xmlns="http://www.w3.org/2000/svg">
                             <rect className="animation" height={60} width={100} rx={30} x={2} y={2}/>
                         </svg>
-                        <button className="navbar-button" ref={contactRef}>
+                        <button className="navbar-button">
                             <a>Contact</a>
                         </button>
                     </div>
                 </div>
                     
                 <div className='menu' id='menu'>
-                    <ul className='ml-4 mt-20'>
-                        <li className='pb-4'><a href='#about'>About</a></li>
-                        <li ><a href='#projects'>Projects</a></li>
-                        <li className='pt-4' ><a>Contact</a></li>
+                    <ul className='flex justify-between w-[50%]'>
+                        <li><a href='#about' onClick={rotateMenu}>About</a></li>
+                        <li><a href='#projects' onClick={rotateMenu}>Projects</a></li>
+                        <li><a onClick={rotateMenu}>Contact</a></li>
                     </ul>
                 </div>
 
@@ -64,7 +61,6 @@ function Navbar() {
                     <span className='menu-line line3'></span>
                 </div>
             </header>
-            <Contactform test={contactRef} />
 
             <div>
                 <Progressbar 

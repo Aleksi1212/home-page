@@ -42,7 +42,7 @@
     stroke-dashoffset: -1461;
 }
 
-#home, #about, #projects, #homeImage, #aboutImage, #projectImage {
+#home, #about, #projects, .image {
     opacity: 1;
     will-change: opacity, visibility;
 }
@@ -89,10 +89,6 @@
     transform: translate3d(0px, -29px, 0px);
 }
 
-.form-input {
-    background: #3f3f3f;
-}
-
 .alt-send-button {
     transition: all .2s ease-in-out;
 }
@@ -103,4 +99,28 @@
 
 .alert {
     transition: margin-left 1s;
+}
+
+.alt-button {
+    transition: all .2s ease-in-out;
+}
+
+.alt-button:hover {
+    transform: translate3d(0px, -29px, 0px);
+}
+
+/* .menu {
+    transition: margin-right .4s ease-in-out;
+}
+
+.menubars {
+    transition: transform .4s ease-in-out;
+} */
+
+#github, #linkedin {
+    transition: transform .2s;
+}
+
+#github:hover, #linkedin:hover {
+    transform: scale(1.3);
 }

@@ -1,7 +1,8 @@
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import Aos from "aos"
 import 'aos/dist/aos.css'
 import Bachgroundline from "./Bachgroundline"
+import Contact from "./Contactform"
 
 // function to import all images from images folder
 function importAll(dir) {
@@ -44,11 +45,11 @@ function Contents() {
             <Bachgroundline />
 
             {/* Welcome section */}
-            <div id="homeImage" className="image mt-44">
+            <div className="image mt-44">
                 <img src={images['background.png']} alt="background" width={30} height={30} className="blur-lg" data-Aos='zoom-in' data-Aos-delay="150" />
                 <img src={images['home.png']} alt="home"width={30} height={30} className="absolute" data-Aos='zoom-in' />
             </div>
-            <section className="home-container">
+            <section className="home-container h-80">
                 <div className="section-header" data-Aos="fade-right">
                     <h1>Welcome to my page</h1>
                 </div>
@@ -60,7 +61,7 @@ function Contents() {
             </section>
 
             {/* About me section */}
-            <div id="aboutImage" className="image">
+            <div className="image">
                 <img src={images['background.png']} alt="background" width={30} height={30} className="blur-lg" data-Aos="zoom-in" data-Aos-delay="150" />
                 <img src={images['about.png']} alt="about" width={30} height={30} className="absolute" data-Aos="zoom-in" />
             </div>
@@ -69,8 +70,8 @@ function Contents() {
                 <div className="section-header" data-Aos="fade-right">
                     <h1>About me</h1>
                 </div>
-                <p className="show-more" id="show-more" data-Aos="fade-right" data-Aos-delay="200">Show more</p>
-                <p className="show-more mt-[33.5rem] w-[4.2rem] hidden" id="show-less">Show less</p>
+                <p className="show-more" id="show-more" data-Aos="fade-right" data-Aos-delay="200">View more</p>
+                <p className="show-more mt-[33.5rem] w-[3.9rem] hidden" id="show-less">View less</p>
                 <p className="mt-[19.5rem] ml-[12rem] absolute xl:hidden" id="dots" data-Aos="fade-right">...</p>
 
                 <p data-Aos="fade-right" data-Aos-delay="200">
@@ -90,7 +91,7 @@ function Contents() {
             </section>
 
             {/* Projects section */}
-            <div id="projectImage" className="image">
+            <div className="image">
                 <img src={images['background.png']} alt="background" width={30} height={30} className="blur-lg" data-Aos='zoom-in' data-Aos-delay="150" />
                 <img src={images['projects.png']} alt="projects" width={30} height={30} className="absolute" data-Aos='zoom-in' />
             </div>
@@ -130,7 +131,7 @@ function Contents() {
             </section>
 
             {/* Thank you section */}
-            <div id="thankImage" className="image">
+            <div className="image">
                 <img src={images['background.png']} alt="background" width={30} height={30} className="blur-lg" data-Aos="zoom-in" data-Aos-delay="150" />
                 <img src={images['heart.png']} alt="heart" width={30} height={30} className="absolute" data-Aos="zoom-in" />
             </div>
@@ -146,15 +147,17 @@ function Contents() {
                 <div className="buttons">
                     <a className="alt-button">
                         <img src={images['github.png']} alt="source" className="ml-[8px]" data-Aos="fade-right" data-Aos-delay="400" />
-                        <span className="view-text">Source</span>
+                        <span className="view-text" data-Aos="fade-right" data-Aos-delay="400">Source</span>
                     </a>
 
                     <a className="alt-button" href="#root">
-                        <img src={images['top.png']} alt="back-to-top" width={25} height={25} className="ml-[20px]" data-Aos="fade-right" data-Aos-delay="600" />
-                        <span className="view-text">Back to top</span>
+                        <img src={images['top.png']} alt="back-to-top" width={25} height={25} className="ml-[20px] mt-[.15rem]" data-Aos="fade-right" data-Aos-delay="600" />
+                        <span className="view-text pt-[3px]" data-Aos="fade-right" data-Aos-delay="600">Back to top</span>
                     </a>
                 </div>
             </section>
+
+            <Contact />
 
             {/* footer */}
             <footer className="footer">
