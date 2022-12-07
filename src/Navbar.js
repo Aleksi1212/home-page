@@ -42,7 +42,7 @@ function Navbar() {
                             <rect className="animation" height={60} width={100} rx={30} x={2} y={2}/>
                         </svg>
                         <button className="navbar-button">
-                            <a>Contact</a>
+                            <a href='#contact-form'>Contact</a>
                         </button>
                     </div>
                 </div>
@@ -51,7 +51,7 @@ function Navbar() {
                     <ul className='flex justify-between w-[50%]'>
                         <li><a href='#about' onClick={rotateMenu}>About</a></li>
                         <li><a href='#projects' onClick={rotateMenu}>Projects</a></li>
-                        <li><a onClick={rotateMenu}>Contact</a></li>
+                        <li><a href='#contact-form' onClick={rotateMenu}>Contact</a></li>
                     </ul>
                 </div>
 

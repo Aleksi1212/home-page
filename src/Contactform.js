@@ -70,22 +70,24 @@ function Contact() {
                 <img src={form} alt="heart" width={30} height={30} className="absolute" data-Aos="zoom-in" />
             </div>
 
-            <div className="form-container">
+            <div className="form-container" id="contact-form">
                 <div className="section-header" data-Aos="fade-right">
                     <h1>Contact me</h1>
                 </div>
-                <div id="form-wrapper" data-Aos="fade-right" data-Aos-delay="200">
+                <div id="form-wrapper" data-Aos="fade-right" data-Aos-delay="200" /*className="bg-blue-500"*/>
                     <form id="contact-form" ref={formRef} onSubmit={sendEmail} >
                         <div className="col-sm-12">
-                            <input type="text" className="form-input" id="name" placeholder="Name" name="name" required />
+                            <input type="text" className="form-input" id="name" name="name" required />
+                            <label for="name" className="placeholder">Name</label>
                         </div>
 
                         <div className="col-sm-12">
-                            <input type="text" className="form-input" id="email" placeholder="Email" name="email" required />
+                            <input type="text" className="form-input" id="email" name="email" required />
+                            <label for="email" className="placeholder">Email</label>
                         </div>
-
-                        <textarea className="form-input" placeholder="Message" name="message" required >
-                        </textarea>
+                        
+                        <textarea className="form-input h-16 resize-none" id="message" name="message" required />
+                        <label for="message" className="message-placeholder pt-[4rem]">Message</label>
 
                         <button className="form-submit" type="submit" onClick={showLoad}>
                             <div className="alt-send-button w-[20rem] h-[30px] pt-[5px]">

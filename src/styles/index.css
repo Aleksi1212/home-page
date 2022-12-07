@@ -92,15 +92,15 @@
     }
 
     #form-wrapper {
-        @apply absolute flex flex-row justify-start w-[52%] h-[34%] bg-blue-500
+        @apply absolute flex flex-row justify-start w-[52%] h-[34%]
     }
 
     .form-input {
-        @apply xl:w-full w-[57%] mt-[.5rem] p-[5px] bg-transparent border-b-2
+        @apply xl:w-full w-[57%] mt-[2rem] p-[5px] bg-transparent border-b-2
     }
 
-    .form-input:focus {
-        @apply border-limeGreen border-b-[3px]
+    .placeholder, .message-placeholder {
+        @apply left-[.3rem] pt-[2.3rem] absolute pointer-events-none opacity-50
     }
 
     .form-submit {

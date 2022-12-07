@@ -81,6 +81,23 @@
     transition: right 2s;
 }
 
+.placeholder, .message-placeholder {
+    transform-origin: 0 50%;
+    transition: transform .2s, color .2s;
+}
+
+.form-input:focus ~ .placeholder {
+    transform: translateY(-30px) translateX(-5px);
+    color: #75d77e;
+    opacity: 1;
+}
+
+.form-input:focus ~ .message-placeholder {
+    transform: translateY(-60px) translateX(-5px);
+    color: #75d77e;
+    opacity: 1;
+}
+
 .alt-close-form {
     transition: all .2s ease-in-out;
 }
