@@ -7,7 +7,7 @@ import plane from './images/paperplane.png'
 import close from './images/close.png'
 import check from './images/check.png'
 
-function Contact(props) {
+function Contact() {
     const formRef = useRef()
     const alertRefs = {
         alertBox: useRef(),
