@@ -104,28 +104,27 @@ function Contents() {
                 <div className="project-cards">
 
                     <div className="project xl:mb-0 mb-2" data-Aos="fade-right" data-Aos-delay="200">
-                        <img src={images['database.png']} alt="database" />
                         <div className="projectinfo">
                             <h1>Car database</h1>
                             <p>View GitHub repository</p>
                         </div>
+                        <img src={images['database.png']} alt="database" />
                     </div>
 
                     <div className="project xl:mb-0 mb-2" data-Aos="fade-right" data-Aos-delay="400">
-                        <img src={images['api.png']} alt="api" />
                         <div className="projectinfo">
                             <h1>RESTful api</h1>
                             <p>View GitHub repository</p>
                         </div>
-
+                        <img src={images['api.png']} alt="api" />
                     </div>
 
                     <div className="project" data-Aos="fade-right" data-Aos-delay="600">
-                        <img src={images['space.png']} alt="space" />
                         <div className="projectinfo">
                             <h1>Python space simulation</h1>
                             <p>View GitHub repository</p>
                         </div>
+                        <img src={images['space.png']} alt="space" />
                     </div>
                 </div>
             </section>

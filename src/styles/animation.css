@@ -67,18 +67,18 @@
     0% {
         transform: rotate(0deg);
     }
-    
+
     100% {
         transform: rotate(360deg);
     }
 }
 
 .project img {
-    transition: margin-top .5s;
+    transition: transform .5s;
 }
 
-#form-container {
-    transition: right 2s;
+.project img:hover {
+    transform: translateY(-20%);
 }
 
 .placeholder, .message-placeholder {
@@ -87,15 +87,27 @@
 }
 
 .form-input:focus ~ .placeholder {
-    transform: translateY(-30px) translateX(-5px);
+    transform: translateY(-30px);
     color: #75d77e;
     opacity: 1;
 }
 
 .form-input:focus ~ .message-placeholder {
-    transform: translateY(-60px) translateX(-5px);
+    transform: translateY(-60px);
     color: #75d77e;
     opacity: 1;
+}
+
+.form-input:not(:placeholder-shown) ~ .placeholder {
+    transform: translateY(-30px);
+    color: #75d77e;
+    opacity: .7;
+}
+
+.form-input:not(:placeholder-shown) ~ .message-placeholder {
+    transform: translateY(-60px);
+    color: #75d77e;
+    opacity: .7;
 }
 
 .alt-close-form {
@@ -114,6 +126,10 @@
     transform: translate3d(0px, -29px, 0px);
 }
 
+.mobile-submit:active {
+    filter: brightness(70%);
+}
+
 .alert {
     transition: margin-left 1s;
 }
@@ -126,13 +142,18 @@
     transform: translate3d(0px, -29px, 0px);
 }
 
-/* .menu {
-    transition: margin-right .4s ease-in-out;
-}
-
 .menubars {
     transition: transform .4s ease-in-out;
-} */
+}
+
+.menu-line {
+    transition: background-color .4s;
+}
+
+.link {
+    margin-top: -6rem;
+    transition: margin-Top .2s ease-in-out;
+}
 
 #github, #linkedin {
     transition: transform .2s;

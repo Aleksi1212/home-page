@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import useWindowDimensions from "./WindowSizeHook";
 import emailjs from '@emailjs/browser'
 
 import form from './images/form.png'
@@ -16,6 +17,7 @@ function Contact() {
         error: useRef(),
         status: useRef()
     }
+    const { height, width } = useWindowDimensions() 
 
     const sendEmail = (exp) => {
         exp.preventDefault()
@@ -24,7 +26,12 @@ function Contact() {
             .then((res) => {
                 formRef.current.reset()
 
-                alertRefs.alertBox.current.style.marginLeft = '10rem'
+                if (width < 1080) {
+                    alertRefs.alertBox.current.style.marginLeft = '3rem'
+                } else {
+                    alertRefs.alertBox.current.style.marginLeft = '10rem'
+                }
+
                 alertRefs.success.current.style.display = 'flex'
                 alertRefs.status.current.innerHTML = 'Succesfully sent'
                 document.getElementById('load').style.display = 'none'
@@ -74,26 +81,32 @@ function Contact() {
                 <div className="section-header" data-Aos="fade-right">
                     <h1>Contact me</h1>
                 </div>
-                <div id="form-wrapper" data-Aos="fade-right" data-Aos-delay="200" /*className="bg-blue-500"*/>
+                <div id="form-wrapper" data-Aos="fade-right" data-Aos-delay="200">
                     <form id="contact-form" ref={formRef} onSubmit={sendEmail} >
-                        <div className="col-sm-12">
-                            <input type="text" className="form-input" id="name" name="name" required />
-                            <label for="name" className="placeholder">Name</label>
+                        <div className="col-sm-12 input-container">
+                            <input type="text" className="form-input" id="name" name="name" placeholder=" " required />
+                            <label htmlFor="name" className="placeholder">Name</label>
                         </div>
 
-                        <div className="col-sm-12">
-                            <input type="text" className="form-input" id="email" name="email" required />
-                            <label for="email" className="placeholder">Email</label>
+                        <div className="col-sm-12 input-container">
+                            <input type="text" className="form-input" id="email" name="email" placeholder=" " required />
+                            <label htmlFor="email" className="placeholder">Email</label>
                         </div>
                         
-                        <textarea className="form-input h-16 resize-none" id="message" name="message" required />
-                        <label for="message" className="message-placeholder pt-[4rem]">Message</label>
+                        <div className="input-container">
+                            <textarea className="form-input h-16 resize-none" id="message" name="message" placeholder=" " required />
+                            <label htmlFor="message" className="message-placeholder pt-[4rem]">Message</label>
+                        </div>
 
-                        <button className="form-submit" type="submit" onClick={showLoad}>
+                        <button className="xl:form-submit hidden" type="submit" onClick={showLoad}>
                             <div className="alt-send-button w-[20rem] h-[30px] pt-[5px]">
-                                <img src={plane} alt="plane" className="ml-[9.5rem] w-[20px] h-[20px]" />
-                                <span className="block mt-[8px]">Send</span>
+                                <img src={plane} alt="plane" className="ml-[9.5rem] w-[20px] h-[20px] hidden xl:block" />
+                                <span className="block xl:mt-[8px]">Send</span>
                             </div>
+                        </button>
+
+                        <button className="mobile-submit xl:hidden" type="submit" onClick={showLoad}>
+                            <span>Send</span>
                         </button>
                     </form>
 
@@ -104,10 +117,10 @@ function Contact() {
 
             <div className="alert" ref={alertRefs.alertBox}>
                 <div className="alertheader" ref={alertRefs.header}>
-                    <img src={check} alt="success" className="hidden w-4 h-4" ref={alertRefs.success} />
-                    <img src={close} alt="denial" className="hidden w-4 h-4" ref={alertRefs.error} />
+                    <img src={check} alt="success" className="alert-image" ref={alertRefs.success} />
+                    <img src={close} alt="denial" className="alert-image" ref={alertRefs.error} />
                 </div>
-                <h1 ref={alertRefs.status} className="mt-6 ml-2"></h1>
+                <h1 ref={alertRefs.status} className="xl:mt-6 mt-3 ml-2 xl:text-base text-sm">Succesfully sent</h1>
             </div>
         </>
     )

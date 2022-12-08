@@ -4,14 +4,38 @@ function Navbar() {
 
     function rotateMenu() {
         let menubars = document.getElementById('menubars')
-        let menu = document.getElementById('menu')
+        let lines = [document.getElementById('line1'), document.getElementById('line2'), document.getElementById('line3')]
+        let links = {
+            aboutLink: document.getElementById('aboutLink'),
+            projectLink: document.getElementById('projectLink'),
+            contactLink: document.getElementById('contactLink')
+        }
 
         if (menubars.style.transform === 'rotate(90deg)') {
-            menubars.style.transform = 'rotate(0deg)'
-            menu.style.marginLeft = '-30rem'
+            menubars.style.transform = 'rotate(0)'
+            changeColors(lines, 'white')   
+
+            links.contactLink.style.marginTop = '-6rem'
+            setTimeout(showOrHideLinks, 200, links.projectLink, '-6rem')
+            setTimeout(showOrHideLinks, 400, links.aboutLink, '-6rem')
+
         } else {
             menubars.style.transform = 'rotate(90deg)'
-            menu.style.marginLeft = '0rem'
+            changeColors(lines, '#75d77e')
+
+            links.aboutLink.style.marginTop = '0'
+            setTimeout(showOrHideLinks, 200, links.projectLink, '0')
+            setTimeout(showOrHideLinks, 400, links.contactLink, '0')
+        }
+
+        function showOrHideLinks(element, marginTop) {
+            element.style.marginTop = marginTop
+        }
+
+        function changeColors(items, color) {
+            for (let i = 0; i < items.length; i++) {
+                items[i].style.backgroundColor = color
+            }
         }
     }
 
@@ -24,7 +48,9 @@ function Navbar() {
                             <rect className="animation" height={60} width={100} rx={30} x={2} y={2}/>
                         </svg>
                         <button className="navbar-button">
-                            <a href="#about">About</a>
+                            <a href="#about">
+                                <span className='text-limeGreen'>A</span>bout
+                            </a>
                         </button>
                     </div>
                     
@@ -33,7 +59,9 @@ function Navbar() {
                             <rect className="animation" height={60} width={100} rx={30} x={2} y={2}/>
                         </svg>
                         <button className="navbar-button">
-                            <a href="#projects">Projects</a>
+                            <a href="#projects">
+                                <span className='text-limeGreen'>P</span>rojects
+                            </a>
                         </button>
                     </div>
 
@@ -42,23 +70,40 @@ function Navbar() {
                             <rect className="animation" height={60} width={100} rx={30} x={2} y={2}/>
                         </svg>
                         <button className="navbar-button">
-                            <a href='#contact-form'>Contact</a>
+                            <a href='#contact-form'>
+                                <span className='text-limeGreen'>C</span>ontact
+                            </a>
                         </button>
                     </div>
                 </div>
                     
                 <div className='menu' id='menu'>
                     <ul className='flex justify-between w-[50%]'>
-                        <li><a href='#about' onClick={rotateMenu}>About</a></li>
-                        <li><a href='#projects' onClick={rotateMenu}>Projects</a></li>
-                        <li><a href='#contact-form' onClick={rotateMenu}>Contact</a></li>
+                        <li className='link' id='aboutLink'>
+                            <a href='#about' onClick={rotateMenu}>
+                                <span className='text-limeGreen'>A</span>bout
+                            </a>
+
+                        </li>
+
+                        <li className='link' id='projectLink'>
+                            <a href='#projects' onClick={rotateMenu}>
+                                <span className='text-limeGreen'>P</span>rojects
+                            </a>
+                        </li>
+
+                        <li className='link' id='contactLink'>
+                            <a href='#contact-form' onClick={rotateMenu}>
+                                <span className='text-limeGreen'>C</span>ontact
+                            </a>
+                        </li>
                     </ul>
                 </div>
 
                 <div className='menubars' id='menubars' onClick={rotateMenu}>
-                    <span className='menu-line line1'></span>
-                    <span className='menu-line line2'></span>
-                    <span className='menu-line line3'></span>
+                    <span className='menu-line' id='line1'></span>
+                    <span className='menu-line' id='line2'></span>
+                    <span className='menu-line' id='line3'></span>
                 </div>
             </header>
 
