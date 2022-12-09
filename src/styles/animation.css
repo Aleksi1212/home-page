@@ -73,12 +73,12 @@
     }
 }
 
-.project img {
-    transition: transform .5s;
+.projectinfo {
+    transition: bottom .5s;
 }
 
-.project img:hover {
-    transform: translateY(-20%);
+.project:hover > .projectinfo {
+    bottom: 0;
 }
 
 .placeholder, .message-placeholder {
@@ -108,14 +108,6 @@
     transform: translateY(-60px);
     color: #75d77e;
     opacity: .7;
-}
-
-.alt-close-form {
-    transition: all .2s ease-in-out;
-}
-
-.alt-close-form:hover {
-    transform: translate3d(0px, -29px, 0px);
 }
 
 .alt-send-button {
@@ -153,6 +145,10 @@
 .link {
     margin-top: -6rem;
     transition: margin-Top .2s ease-in-out;
+}
+
+.link:active {
+    opacity: .5;
 }
 
 #github, #linkedin {

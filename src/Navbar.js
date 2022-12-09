@@ -49,7 +49,7 @@ function Navbar() {
                         </svg>
                         <button className="navbar-button">
                             <a href="#about">
-                                <span className='text-limeGreen'>A</span>bout
+                                <span className='text-limeGreen'>.</span>about<span className='text-limeGreen'>()</span>
                             </a>
                         </button>
                     </div>
@@ -60,7 +60,7 @@ function Navbar() {
                         </svg>
                         <button className="navbar-button">
                             <a href="#projects">
-                                <span className='text-limeGreen'>P</span>rojects
+                                <span className='text-limeGreen'>.</span>projects<span className='text-limeGreen'>()</span>
                             </a>
                         </button>
                     </div>
@@ -71,7 +71,7 @@ function Navbar() {
                         </svg>
                         <button className="navbar-button">
                             <a href='#contact-form'>
-                                <span className='text-limeGreen'>C</span>ontact
+                                <span className='text-limeGreen'>.</span>contact<span className='text-limeGreen'>()</span>
                             </a>
                         </button>
                     </div>
@@ -81,20 +81,20 @@ function Navbar() {
                     <ul className='flex justify-between w-[50%]'>
                         <li className='link' id='aboutLink'>
                             <a href='#about' onClick={rotateMenu}>
-                                <span className='text-limeGreen'>A</span>bout
+                                <span className='text-limeGreen'>.</span>about<span className='text-limeGreen'>()</span>
                             </a>
 
                         </li>
 
                         <li className='link' id='projectLink'>
                             <a href='#projects' onClick={rotateMenu}>
-                                <span className='text-limeGreen'>P</span>rojects
+                                <span className='text-limeGreen'>.</span>projects<span className='text-limeGreen'>()</span>
                             </a>
                         </li>
 
                         <li className='link' id='contactLink'>
                             <a href='#contact-form' onClick={rotateMenu}>
-                                <span className='text-limeGreen'>C</span>ontact
+                                <span className='text-limeGreen'>.</span>contact<span className='text-limeGreen'>()</span>
                             </a>
                         </li>
                     </ul>

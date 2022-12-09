@@ -6,7 +6,8 @@ function setBackground(Background) {
         useEffect(() => {
             let path = document.getElementById('linePath')
             let pathLength = path.getTotalLength()
-    
+            
+            document.getElementById('svg-line').style.height = `${props.lineHeight}px`
             path.style.strokeDasharray = `${pathLength} ${pathLength}`
             path.style.strokeDashoffset = pathLength
     
@@ -16,7 +17,7 @@ function setBackground(Background) {
                 
                 path.style.strokeDashoffset = pathLength - draw
             })
-        })
+        }, [props])
 
         return <Background />
     }
@@ -40,9 +41,9 @@ class Background extends React.Component {
                     </svg>
                 </div>
 
-                <div className="line hidden xl:flex xl:-mt-[10rem] xxxl:-mt-[3rem]">
-                    <svg className="w-[5px] xxxl:h-[4700px] xl:h-[5000px]" viewBox="0 0 2 1667" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path id="linePath" /*d="M 1.2745 -0.0091 V 5500"*/ d="M 1.2745 -0.0091 V 6117" stroke="#77D75E" strokeWidth={2.5}/>
+                <div className="line hidden xl:flex -mt-[5rem]">
+                    <svg className="w-[5px]" id="svg-line" viewBox="0 0 2 1667" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path id="linePath" d="M 1.2745 -0.0091 V 6117" stroke="#77D75E" strokeWidth={2.5}/>
                     </svg>
                 </div>
             </>

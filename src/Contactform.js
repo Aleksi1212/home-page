@@ -1,14 +1,20 @@
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import useWindowDimensions from "./WindowSizeHook";
 import emailjs from '@emailjs/browser'
+import Contents from "./Contents";
 
-import form from './images/form.png'
-import background from './images/background.png'
-import plane from './images/paperplane.png'
-import close from './images/close.png'
-import check from './images/check.png'
+function importAll(dir) {
+    let images = {}
+    dir.keys().map((item, index) => {
+        images[item.replace('./', '')] = dir(item)
+    })
+
+    return images
+}
 
 function Contact() {
+    const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/))
+
     const formRef = useRef()
     const alertRefs = {
         alertBox: useRef(),
@@ -17,12 +23,29 @@ function Contact() {
         error: useRef(),
         status: useRef()
     }
+
     const { height, width } = useWindowDimensions() 
+
+    const imageRef = useRef()
+    const [y_pos, setY_pos] = useState()
+
+    const getPosition = () => {
+        let y = imageRef.current.offsetTop
+        setY_pos(y)
+    }
+
+    useEffect(() => {
+        getPosition()
+    }, [])
+
+    useEffect(() => {
+        window.addEventListener('resize', getPosition())
+    }, [])
 
     const sendEmail = (exp) => {
         exp.preventDefault()
 
-        emailjs.sendForm('service_te6k1gm', 'template_qgqfqcg', formRef.current, 'Boi87gFFHORJ-a-si')
+        emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPELATE_ID, formRef.current, process.env.REACT_APP_PUBLIC_KEY)
             .then((res) => {
                 formRef.current.reset()
 
@@ -43,7 +66,12 @@ function Contact() {
             }, (err) => {
                 formRef.current.reset()
 
-                alertRefs.alertBox.current.style.marginLeft = '10rem'
+                if (width < 1080) {
+                    alertRefs.alertBox.current.style.marginLeft = '3rem'
+                } else {
+                    alertRefs.alertBox.current.style.marginLeft = '10rem'
+                }
+
                 alertRefs.header.current.style.backgroundColor = 'red'
                 alertRefs.error.current.style.display = 'flex'
                 alertRefs.status.current.innerHTML = 'An error occurred'
@@ -72,9 +100,12 @@ function Contact() {
 
     return (
         <>
-            <div className="image">
-                <img src={background} alt="background" width={30} height={30} className="blur-lg" data-Aos="zoom-in" data-Aos-delay="150" />
-                <img src={form} alt="heart" width={30} height={30} className="absolute" data-Aos="zoom-in" />
+            <Contents formPosition={y_pos} />
+
+            {/* Contact form */}
+            <div className="image" ref={imageRef}>
+                <img src={images['background.png']} alt="background" width={30} height={30} className="blur-lg" data-Aos="zoom-in" data-Aos-delay="150" />
+                <img src={images['form.png']} alt="heart" width={30} height={30} className="absolute" data-Aos="zoom-in" />
             </div>
 
             <div className="form-container" id="contact-form">
@@ -100,7 +131,7 @@ function Contact() {
 
                         <button className="xl:form-submit hidden" type="submit" onClick={showLoad}>
                             <div className="alt-send-button w-[20rem] h-[30px] pt-[5px]">
-                                <img src={plane} alt="plane" className="ml-[9.5rem] w-[20px] h-[20px] hidden xl:block" />
+                                <img src={images['paperplane.png']} alt="plane" className="ml-[9.5rem] w-[20px] h-[20px] hidden xl:block" />
                                 <span className="block xl:mt-[8px]">Send</span>
                             </div>
                         </button>
@@ -117,11 +148,27 @@ function Contact() {
 
             <div className="alert" ref={alertRefs.alertBox}>
                 <div className="alertheader" ref={alertRefs.header}>
-                    <img src={check} alt="success" className="alert-image" ref={alertRefs.success} />
-                    <img src={close} alt="denial" className="alert-image" ref={alertRefs.error} />
+                    <img src={images['check.png']} alt="success" className="alert-image" ref={alertRefs.success} />
+                    <img src={images['close.png']} alt="denial" className="alert-image" ref={alertRefs.error} />
                 </div>
-                <h1 ref={alertRefs.status} className="xl:mt-6 mt-3 ml-2 xl:text-base text-sm">Succesfully sent</h1>
+                <h1 ref={alertRefs.status} className="xl:mt-6 mt-3 ml-2 xl:text-base text-sm"></h1>
             </div>
+
+            {/* footer sectionn */}
+            <footer className="footer">
+                <div className="inline text-center xl:text-2xl text-xl xl:ml-0 ml-10">
+                    <h1>Socials</h1>
+                    <div className="flex w-20 justify-between pt-2">
+                        <a href="https://github.com/Aleksi1212">
+                            <img src={images['github.png']} alt="github" id="github" />
+                        </a>
+                        <a href="https://www.linkedin.com/in/aleksi-noro-8ba447249/">
+                            <img src={images['linkedin.png']} alt="linkedin" id="linkedin" />
+                        </a>
+                    </div>
+                </div>
+                <p className="opacity-50 mt-40 -ml-[7rem] text-sm">Copyright © Aleksi Noro</p>
+            </footer>
         </>
     )
 }

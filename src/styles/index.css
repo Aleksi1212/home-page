@@ -40,7 +40,7 @@
     }
 
     .home-container, .about-container, .thankYou-container, .form-container {
-        @apply xl:ml-60 ml-20 xl:-mt-16 -mt-14 h-96 p-3 xl:w-[52%] w-[15rem] xl:overflow-visible overflow-hidden
+        @apply xl:ml-60 ml-20 xl:-mt-16 -mt-14 h-96 p-3 md:w-[62%] w-[15rem] xl:overflow-visible overflow-hidden
     }
 
     .project-container {
@@ -52,7 +52,7 @@
     }
 
     .project {
-        @apply xl:w-[32%] xl:h-[98%] w-full h-[30%] rounded-[15px] overflow-hidden
+        @apply xl:w-[32%] xl:h-[98%] w-full h-[30%] rounded-[15px] overflow-hidden bg-blue-500
     }
 
     .project img {
@@ -60,7 +60,7 @@
     }
 
     .projectinfo {
-        @apply pl-[5%] xl:pt-[4%] w-full h-[20%] absolute bottom-0 bg-lighterGray border-t-4 border-limeGreen xl:inline-block hidden
+        @apply pl-[5%] xl:pt-[4%] w-full xl:h-[20%] h-full absolute bottom-[-20%]  bg-lighterGray border-b-4 border-limeGreen xl:inline-block hidden rounded-tr-[30px] 
     }
 
     .home-container p, .about-container p, .thankYou-container p {
@@ -88,11 +88,11 @@
     }
 
     #form-wrapper {
-        @apply absolute flex flex-row justify-start w-[52%] h-[34%]
+        @apply absolute flex flex-row justify-start w-[62%] h-[34%] 
     }
 
     .input-container {
-        @apply xxxl:w-[25rem] w-full
+        @apply xxxl:w-[25rem] w-[90%] md:w-[20rem]
     }
 
     .form-input {
@@ -116,15 +116,15 @@
     }
 
     .mobile-submit {
-        @apply bg-limeGreen w-[100%] cursor-pointer h-[30px] rounded-[5px]
+        @apply bg-limeGreen w-[90%] cursor-pointer h-[30px] rounded-[5px]
     }
 
     .alert {
-        @apply absolute xl:w-[17rem] xl:h-[85px] w-[10rem] h-[60px] -ml-[20rem] rounded-[5px] bg-[#2f2f2f] inline
+        @apply absolute xl:w-[17rem] xl:h-[85px] md:w-[13rem] md:h-[70px] w-[10rem] h-[60px] -ml-[20rem] xl:mt-[5rem] rounded-[5px] bg-[#2f2f2f] inline
     }
 
     .alertheader {
-        @apply xl:w-[17rem] xl:h-[18px] w-[10rem] h-[15px] rounded-bl-none rounded-br-none rounded-tl-[5px] rounded-tr-[5px] items-center pl-[5px] flex bg-limeGreen
+        @apply xl:w-[17rem] xl:h-[18px] md:w-[13rem] w-[10rem] h-[15px] rounded-bl-none rounded-br-none rounded-tl-[5px] rounded-tr-[5px] items-center pl-[5px] flex bg-limeGreen
     }
 
     .alert-image {
@@ -132,11 +132,11 @@
     }
 
     .loader {
-        @apply absolute xl:ml-[33rem] xl:-mt-[2rem] xxxl:ml-[38rem] xxxl:-mt-[1.5rem] ml-[15rem] -mt-[4rem] w-[40px] h-[40px] hidden
+        @apply absolute xl:ml-[33rem] xl:-mt-[2rem] xxxl:ml-[38rem] xxxl:-mt-[1.5rem] md:ml-[23rem] ml-[18rem] -mt-[4rem] w-[40px] h-[40px] hidden
     }
 
     .show-more {
-        @apply w-[4.3rem] h-[1.2rem] absolute mt-[21.5rem] xl:hidden text-limeGreen cursor-pointer text-[15px] border-b-[1px] border-limeGreen
+        @apply w-[4.3rem] h-[1.2rem] absolute mt-[21.5rem] md:hidden text-limeGreen cursor-pointer text-[15px] border-b-[1px] border-limeGreen
     }
 
     .buttons {
@@ -154,22 +154,16 @@
     .footer {
         @apply w-full bg-darkGrey h-60 mt-[50%] flex justify-center pt-10
     }
-}
 
-/* svg lines styles start */
-.top-lines #line1 {
-    margin-left: 10.75rem;
-    margin-top: -0.1rem;
-}
+    .top-lines #line1 {
+        @apply ml-[10.75rem] -mt-[.1rem]
+    }
 
-.top-lines #line2 {
-    margin-top: -11rem;
-    margin-left: -2rem;
-}
+    .top-lines #line2 {
+        @apply -ml-[2rem] -mt-[11rem]
+    }
 
-.line {
-    position: absolute;
-    overflow: hidden;
-    margin-left: 10.75rem;
+    .line {
+        @apply absolute overflow-hidden ml-[10.75rem]
+    }
 }
-/* svg lines styles end */
