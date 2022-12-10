@@ -44,15 +44,51 @@
     }
 
     .project-container {
-        @apply xl:ml-60 ml-20 xl:-mt-16 -mt-[2.7rem] w-[62%] xxxl:h-[40rem] xl:h-[30rem] h-[23rem] 
+        @apply xl:ml-60 ml-20 xl:-mt-16 -mt-[2.7rem] w-[62%] xxxl:h-[40rem] h-[30rem]
     }
 
     .project-cards {
         @apply xl:h-[60%] w-[62%] h-[37%] xl:flex xl:justify-between absolute inline
     }
 
+    .card-container {
+        @apply xl:w-[32%] xl:h-[98%] w-full h-[45%] rounded-[15px] overflow-hidden relative
+    }
+
+    .databaseCard, .apiCard, .spaceCard {
+        @apply w-full h-full rounded-[15px] overflow-hidden bg-darkGrey
+    }
+
+    .databaseCard:before, .apiCard:before, .spaceCard:before {
+        @apply absolute top-0 left-0 w-full h-full xxxl:clip-path-imageCircle xl:clip-path-mdImageCircle
+    }
+
+    .databaseCard:hover:before, .apiCard:hover:before, .spaceCard:hover:before {
+        @apply xxxl:clip-path-imageCircleMove xl:clip-path-mdImageCircleMove
+    }
+
+    .databaseCard:after, .apiCard:after, .spaceCard:after {
+        @apply absolute xxxl:top-[45%] xl:top-[50%] xxxl:left-[-5%] xl:left-[-3%] xxxl:text-[7em] xl:text-[5em] font-[700] italic
+    }
+
+    .contentBox {
+        @apply absolute xxxl:bottom-0 xxl:bottom-[-5%] xl:bottom-[-10%] w-full h-[100px] text-center
+    }
+
+    .databaseCard:hover .contentBox, .apiCard:hover .contentBox, .spaceCard:hover .contentBox {
+        @apply xxxl:h-[210px] xl:h-[185px]
+    }
+
+    .contentInfo {
+        @apply xxxl:pt-[30px] xxxl:pb-[35px] xl:pt-[20px] xl:pb-[20px] invisible opacity-0 xxxl:text-xl xl:text-sm
+    }
+
+    .source-button {
+        @apply absolute xxxl:left-[37%] xl:left-[35%] flex justify-center w-[100px] h-[30px] overflow-hidden
+    }
+
     .project {
-        @apply xl:w-[32%] xl:h-[98%] w-full h-[30%] rounded-[15px] overflow-hidden bg-blue-500
+        @apply xl:w-[32%] xl:h-[98%] w-full h-[45%] rounded-[15px] overflow-hidden
     }
 
     .project img {
@@ -116,7 +152,7 @@
     }
 
     .mobile-submit {
-        @apply bg-limeGreen w-[90%] cursor-pointer h-[30px] rounded-[5px]
+        @apply bg-limeGreen w-[90%] md:w-full cursor-pointer h-[30px] rounded-[5px]
     }
 
     .alert {
@@ -131,8 +167,12 @@
         @apply hidden xl:w-4 xl:h-4 w-[.7rem] h-[.7rem]
     }
 
+    .load-container {
+        @apply xxxl:w-[25rem] w-[90%] md:w-[20rem] h-[40px] mt-[2%] flex justify-end
+    }
+
     .loader {
-        @apply absolute xl:ml-[33rem] xl:-mt-[2rem] xxxl:ml-[38rem] xxxl:-mt-[1.5rem] md:ml-[23rem] ml-[18rem] -mt-[4rem] w-[40px] h-[40px] hidden
+        @apply hidden h-[40px] w-[40px]
     }
 
     .show-more {
@@ -143,7 +183,7 @@
         @apply flex justify-between mt-[1.5rem] mr-[30rem] w-[200px] h-[35px] xl:overflow-hidden overflow-visible
     }
 
-    .alt-button {
+    .alt-button, .alt-source-button {
         @apply h-[30px] cursor-pointer
     }
 

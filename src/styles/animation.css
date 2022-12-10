@@ -126,11 +126,11 @@
     transition: margin-left 1s;
 }
 
-.alt-button {
+.alt-button, .alt-source-button {
     transition: all .2s ease-in-out;
 }
 
-.alt-button:hover {
+.alt-button:hover, .alt-source-button:hover {
     transform: translate3d(0px, -29px, 0px);
 }
 
@@ -157,4 +157,60 @@
 
 #github:hover, #linkedin:hover {
     transform: scale(1.3);
+}
+
+
+.databaseCard:before, .apiCard:before, .spaceCard:before {
+    content: '';
+    background: url('../images/database.png') no-repeat 0 0;
+    background-size: 160%;
+    transition: .5s ease-in-out;
+}
+
+.apiCard:before {
+    background: url('../images/api.png');
+    background-size: 130%;
+}
+
+.spaceCard:before {
+    background: url('../images/space.png');
+}
+
+.databaseCard:after, .apiCard:after, .spaceCard:after {
+    content: 'Node.JS';
+    color: rgba(117, 215,126, .1);
+}
+
+.apiCard:after {
+    content: 'Express';
+}
+
+.spaceCard:after {
+    content: 'Python';
+}
+
+.contentBox {
+    transition: 1s;
+}
+
+.contentInfo {
+    transition: .5s;
+}
+
+.databaseCard:hover .contentInfo, .apiCard:hover .contentInfo, .spaceCard:hover .contentInfo {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: .6s;
+}
+
+.source-button {
+    transform: translateY(50px);
+    transition: .5s;
+    opacity: 0;
+}
+
+.databaseCard:hover .source-button, .apiCard:hover .source-button, .spaceCard:hover .source-button {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: .75s;
 }

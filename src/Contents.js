@@ -103,28 +103,86 @@ function Contents(props) {
 
                 <div className="project-cards">
 
-                    <div className="project xl:mb-0 mb-2" data-Aos="fade-right" data-Aos-delay="200">
+                    <div className="card-container xl:flex hidden">
+
+                        <div className="databaseCard" data-Aos="fade-right" data-Aos-delay="200">
+                            <div className="contentBox">
+                                <h2 className="xxxl:text-2xl lg:text-lg">Car database</h2>
+                                <p className="contentInfo">
+                                    Server built with Node.JS,
+                                    frontend with ejs and backend with MariaDB
+                                </p>
+
+                                <div className="source-button"> 
+                                    <a className="alt-source-button w-[100px] ml-8">
+                                        <img src={images['github.png']} alt="databaseSource" />
+                                        <span className="-ml-[2.3rem] xxxl:text-base lg:text-sm">Source</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="project xl:hidden flex mb-2" data-Aos="fade-right" data-Aos-delay="200">
                         <img src={images['database.png']} alt="database" />
-                        <div className="projectinfo">
+                        {/* <div className="projectinfo">
                             <h1>Car database</h1>
                             <p>View GitHub repository</p>
-                        </div>
+                        </div> */}
                     </div>
 
-                    <div className="project xl:mb-0 mb-2" data-Aos="fade-right" data-Aos-delay="400">
+                    <div className="card-container xl:flex hidden">
+
+                        <div className="apiCard" data-Aos="fade-right" data-Aos-delay="400">
+                            <div className="contentBox">
+                                <h2 className="xxxl:text-2xl lg:text-lg">RESTful api</h2>
+                                <p className="contentInfo">
+                                    Built with Node.JS and ExpressJS
+                                </p>
+
+                                <div className="source-button"> 
+                                    <a className="alt-source-button w-[100px] ml-8">
+                                        <img src={images['github.png']} alt="databaseSource" />
+                                        <span className="-ml-[2.3rem] xxxl:text-base lg:text-sm">Source</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="project xl:hidden flex mb-2" data-Aos="fade-right" data-Aos-delay="400">
                         <img src={images['api.png']} alt="api" />
-                        <div className="projectinfo">
+                        {/* <div className="projectinfo">
                             <h1>RESTful api</h1>
                             <p>View GitHub repository</p>
+                        </div> */}
+                    </div>
+
+
+                    <div className="card-container xl:flex hidden">
+
+                        <div className="spaceCard" data-Aos="fade-right" data-Aos-delay="600">
+                            <div className="contentBox">
+                                <h2 className="xxxl:text-2xl lg:text-lg">Python space simulation</h2>
+                                <p className="contentInfo">
+                                    Built with using Python and PyGame
+                                </p>
+
+                                <div className="source-button"> 
+                                    <a className="alt-source-button w-[100px] ml-8">
+                                        <img src={images['github.png']} alt="databaseSource" />
+                                        <span className="-ml-[2.3rem] xxxl:text-base lg:text-sm">Source</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div className="project" data-Aos="fade-right" data-Aos-delay="600">
+                    <div className="project xl:hidden flex" data-Aos="fade-right" data-Aos-delay="600">
                         <img src={images['space.png']} alt="space" />
-                        <div className="projectinfo">
+                        {/* <div className="projectinfo">
                             <h1>Python space simulation</h1>
                             <p>View GitHub repository</p>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </section>

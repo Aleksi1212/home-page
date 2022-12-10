@@ -4,6 +4,12 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    clipPath: {
+      imageCircle: "circle(150px at 80% 20%)",
+      imageCircleMove: "circle(300px at 80% -5%)",
+      mdImageCircle: "circle(120px at 80% 20%)",
+      mdImageCircleMove: "circle(200px at 80% -5%)"
+    },
     screens: {
       sm: '480px',
       md: '768px',
@@ -21,5 +27,7 @@ module.exports = {
       }
     }
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-clip-path')
+  ],
 }

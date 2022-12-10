@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import useWindowDimensions from "./WindowSizeHook";
+import useWindowDimensions from "./hooks/WindowSizeHook";
 import emailjs from '@emailjs/browser'
 import Contents from "./Contents";
 
@@ -27,20 +27,6 @@ function Contact() {
     const { height, width } = useWindowDimensions() 
 
     const imageRef = useRef()
-    const [y_pos, setY_pos] = useState()
-
-    const getPosition = () => {
-        let y = imageRef.current.offsetTop
-        setY_pos(y)
-    }
-
-    useEffect(() => {
-        getPosition()
-    }, [])
-
-    useEffect(() => {
-        window.addEventListener('resize', getPosition())
-    }, [])
 
     const sendEmail = (exp) => {
         exp.preventDefault()
@@ -100,7 +86,7 @@ function Contact() {
 
     return (
         <>
-            <Contents formPosition={y_pos} />
+            <Contents formPosition={imageRef} />
 
             {/* Contact form */}
             <div className="image" ref={imageRef}>
@@ -139,12 +125,14 @@ function Contact() {
                         <button className="mobile-submit xl:hidden" type="submit" onClick={showLoad}>
                             <span>Send</span>
                         </button>
+
+                        <div className="load-container">
+                            <div className="loader" id="load"></div>
+                        </div>
                     </form>
 
                 </div>
-
             </div>
-            <div className="loader" id="load"></div>
 
             <div className="alert" ref={alertRefs.alertBox}>
                 <div className="alertheader" ref={alertRefs.header}>

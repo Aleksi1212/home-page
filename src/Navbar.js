@@ -80,20 +80,20 @@ function Navbar() {
                 <div className='menu' id='menu'>
                     <ul className='flex justify-between w-[50%]'>
                         <li className='link' id='aboutLink'>
-                            <a href='#about' onClick={rotateMenu}>
+                            <a href='#about'>
                                 <span className='text-limeGreen'>.</span>about<span className='text-limeGreen'>()</span>
                             </a>
 
                         </li>
 
                         <li className='link' id='projectLink'>
-                            <a href='#projects' onClick={rotateMenu}>
+                            <a href='#projects'>
                                 <span className='text-limeGreen'>.</span>projects<span className='text-limeGreen'>()</span>
                             </a>
                         </li>
 
                         <li className='link' id='contactLink'>
-                            <a href='#contact-form' onClick={rotateMenu}>
+                            <a href='#contact-form'>
                                 <span className='text-limeGreen'>.</span>contact<span className='text-limeGreen'>()</span>
                             </a>
                         </li>
