@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react"
 import Aos from "aos"
 import 'aos/dist/aos.css'
 import Bachgroundline from "./Bachgroundline"
-// import Contact from "./Contactform"
+import useWindowDimensions from "../hooks/WindowSizeHook"
 
 // function to import all images from images folder
 function importAll(dir) {
@@ -38,7 +38,16 @@ function Contents(props) {
         })
     }, [])
 
-    const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/))
+    const images = importAll(require.context('../images', false, /\.(png|jpe?g|svg)$/))
+    const { height, width } = useWindowDimensions()
+
+    function viewRepo(page) {
+        if (width < 976) {
+            window.location.href = page
+        } else {
+            // do nothing
+        }
+    }
 
     return (
         <>
@@ -101,16 +110,17 @@ function Contents(props) {
                     <h1>Projects</h1>
                 </div>
 
+                {/* firs project */}
                 <div className="project-cards">
 
-                    <div className="card-container xl:flex hidden">
+                    <div className="card-container xl:mb-0 mb-2" onClick={() => viewRepo()}>
 
-                        <div className="databaseCard" data-Aos="fade-right" data-Aos-delay="200">
+                        <div className="databaseCard" id="card1" data-Aos="fade-right" data-Aos-delay="200">
                             <div className="contentBox">
                                 <h2 className="xxxl:text-2xl lg:text-lg">Car database</h2>
                                 <p className="contentInfo">
                                     Server built with Node.JS,
-                                    frontend with ejs and backend with MariaDB
+                                    frontend with ejs and database uses MariaDB
                                 </p>
 
                                 <div className="source-button"> 
@@ -123,24 +133,17 @@ function Contents(props) {
                         </div>
                     </div>
 
-                    <div className="project xl:hidden flex mb-2" data-Aos="fade-right" data-Aos-delay="200">
-                        <img src={images['database.png']} alt="database" />
-                        {/* <div className="projectinfo">
-                            <h1>Car database</h1>
-                            <p>View GitHub repository</p>
-                        </div> */}
-                    </div>
+                    {/* second project */}
+                    <div className="card-container xl:mb-0 mb-2" onClick={() => viewRepo()}>
 
-                    <div className="card-container xl:flex hidden">
-
-                        <div className="apiCard" data-Aos="fade-right" data-Aos-delay="400">
+                        <div className="apiCard" id="card2" data-Aos="fade-right" data-Aos-delay="400">
                             <div className="contentBox">
                                 <h2 className="xxxl:text-2xl lg:text-lg">RESTful api</h2>
                                 <p className="contentInfo">
                                     Built with Node.JS and ExpressJS
                                 </p>
 
-                                <div className="source-button"> 
+                                <div className="source-button">
                                     <a className="alt-source-button w-[100px] ml-8">
                                         <img src={images['github.png']} alt="databaseSource" />
                                         <span className="-ml-[2.3rem] xxxl:text-base lg:text-sm">Source</span>
@@ -149,18 +152,11 @@ function Contents(props) {
                             </div>
                         </div>
                     </div>
-                    <div className="project xl:hidden flex mb-2" data-Aos="fade-right" data-Aos-delay="400">
-                        <img src={images['api.png']} alt="api" />
-                        {/* <div className="projectinfo">
-                            <h1>RESTful api</h1>
-                            <p>View GitHub repository</p>
-                        </div> */}
-                    </div>
 
+                    {/* third project */}
+                    <div className="card-container" onClick={() => viewRepo()}>
 
-                    <div className="card-container xl:flex hidden">
-
-                        <div className="spaceCard" data-Aos="fade-right" data-Aos-delay="600">
+                        <div className="spaceCard" id="card3" data-Aos="fade-right" data-Aos-delay="600">
                             <div className="contentBox">
                                 <h2 className="xxxl:text-2xl lg:text-lg">Python space simulation</h2>
                                 <p className="contentInfo">
@@ -175,14 +171,6 @@ function Contents(props) {
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div className="project xl:hidden flex" data-Aos="fade-right" data-Aos-delay="600">
-                        <img src={images['space.png']} alt="space" />
-                        {/* <div className="projectinfo">
-                            <h1>Python space simulation</h1>
-                            <p>View GitHub repository</p>
-                        </div> */}
                     </div>
                 </div>
             </section>

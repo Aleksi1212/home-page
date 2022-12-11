@@ -60,7 +60,7 @@
     }
 
     .databaseCard:before, .apiCard:before, .spaceCard:before {
-        @apply absolute top-0 left-0 w-full h-full xxxl:clip-path-imageCircle xl:clip-path-mdImageCircle
+        @apply absolute top-[30%] left-[7%] xl:top-0 xl:left-0 w-full h-full xxxl:clip-path-imageCircle xl:clip-path-mdImageCircle md:clip-path-tabletImageCircle clip-path-mobileImageCircle
     }
 
     .databaseCard:hover:before, .apiCard:hover:before, .spaceCard:hover:before {
@@ -68,11 +68,11 @@
     }
 
     .databaseCard:after, .apiCard:after, .spaceCard:after {
-        @apply absolute xxxl:top-[45%] xl:top-[50%] xxxl:left-[-5%] xl:left-[-3%] xxxl:text-[7em] xl:text-[5em] font-[700] italic
+        @apply absolute xxxl:top-[45%] xl:top-[50%] top-[20%] xxxl:left-[-5%] xl:left-[-3%] left-[10%] xxxl:text-[7em] xl:text-[5em] md:text-[4em] text-[2em] font-[700] italic
     }
 
     .contentBox {
-        @apply absolute xxxl:bottom-0 xxl:bottom-[-5%] xl:bottom-[-10%] w-full h-[100px] text-center
+        @apply absolute xxxl:bottom-0 xxl:bottom-[-5%] md:bottom-[-10%] bottom-[-30%] md:w-full w-[60%] h-[100px] xl:text-center xl:pl-0 md:pl-12 pl-6
     }
 
     .databaseCard:hover .contentBox, .apiCard:hover .contentBox, .spaceCard:hover .contentBox {
@@ -84,7 +84,7 @@
     }
 
     .source-button {
-        @apply absolute xxxl:left-[37%] xl:left-[35%] flex justify-center w-[100px] h-[30px] overflow-hidden
+        @apply absolute xxxl:left-[37%] xl:left-[35%] flex justify-center w-[100px] h-[30px] xl:overflow-hidden overflow-visible
     }
 
     .project {

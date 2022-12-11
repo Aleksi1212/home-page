@@ -8,7 +8,9 @@ module.exports = {
       imageCircle: "circle(150px at 80% 20%)",
       imageCircleMove: "circle(300px at 80% -5%)",
       mdImageCircle: "circle(120px at 80% 20%)",
-      mdImageCircleMove: "circle(200px at 80% -5%)"
+      mdImageCircleMove: "circle(200px at 80% -5%)",
+      mobileImageCircle: "circle(50px at 80% 40%)",
+      tabletImageCircle: "circle(85px at 80% 40%)"
     },
     screens: {
       sm: '480px',

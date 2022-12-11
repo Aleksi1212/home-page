@@ -1,13 +1,11 @@
-import Navbar from "./Navbar";
-// import Contents from "./Contents";
-import Contact from "./Contactform";
+import Navbar from "./components/Navbar";
+import Contact from "./components/Contactform";
 
 function App() {
   return (
     <>
       <Navbar />
       <Contact />
-      {/* <Contents /> */}
     </>
   )
 }

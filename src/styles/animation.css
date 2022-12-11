@@ -159,18 +159,18 @@
     transform: scale(1.3);
 }
 
-
 .databaseCard:before, .apiCard:before, .spaceCard:before {
     content: '';
-    background: url('../images/database.png') no-repeat 0 0;
+    background: url('../images/database.png');
     background-size: 160%;
     transition: .5s ease-in-out;
 }
 
 .apiCard:before {
-    background: url('../images/api.png');
+    background: url('../images/api.png') no-repeat 0 0;
     background-size: 130%;
 }
+
 
 .spaceCard:before {
     background: url('../images/space.png');
@@ -182,11 +182,18 @@
 }
 
 .apiCard:after {
-    content: 'Express';
+    content: 'ExpressJS';
 }
 
 .spaceCard:after {
     content: 'Python';
+}
+
+@media (max-width: 976px) {
+    .databaseCard:before, .apiCard:before, .spaceCard:before {
+        background-size: 110%;
+        background-position: -250%;
+    }
 }
 
 .contentBox {

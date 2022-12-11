@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import useWindowDimensions from "./hooks/WindowSizeHook";
+import useWindowDimensions from "../hooks/WindowSizeHook";
 import emailjs from '@emailjs/browser'
 import Contents from "./Contents";
 
@@ -13,7 +13,7 @@ function importAll(dir) {
 }
 
 function Contact() {
-    const images = importAll(require.context('./images', false, /\.(png|jpe?g|svg)$/))
+    const images = importAll(require.context('../images', false, /\.(png|jpe?g|svg)$/))
 
     const formRef = useRef()
     const alertRefs = {

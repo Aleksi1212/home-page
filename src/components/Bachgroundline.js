@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react"
-import useDivPosition from "./hooks/DivPositionHoook";
+import useDivPosition from "../hooks/DivPositionHoook";
 
 function Background(props) {
     const divPosition = useDivPosition(props.lineHeight)
