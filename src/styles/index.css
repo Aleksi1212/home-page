@@ -204,6 +204,6 @@
     }
 
     .line {
-        @apply absolute overflow-hidden ml-[10.75rem]
+        @apply absolute overflow-hidden ml-[10.75rem] top-0
     }
 }

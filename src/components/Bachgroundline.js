@@ -1,14 +1,20 @@
 import React, { useEffect, useRef } from "react"
 import useDivPosition from "../hooks/DivPositionHoook";
+import useDivDimensions from "../hooks/DivDimensionsHook";
 
 function Background(props) {
-    const divPosition = useDivPosition(props.lineHeight)
+    const lineHeight = useDivPosition(props.lineHeight)
+    const lineStart = useDivPosition(props.lineStart)
     const svgRef = useRef(null)
 
-    if (svgRef.current === null) {
+    const topLinesRef = useRef(null)
+    const divDimnesions = useDivDimensions(topLinesRef)
+
+    if(svgRef.current === null) {
         // do nothing
     } else {
-        svgRef.current.style.height = `${divPosition}px`
+        svgRef.current.style.height = `${lineHeight - divDimnesions.height}px`
+        svgRef.current.style.marginTop = `${lineStart}px`
     }
 
     useEffect(() => {
@@ -29,7 +35,7 @@ function Background(props) {
 
     return (
         <>
-            <div className="top-lines">
+            <div className="top-lines" ref={topLinesRef}>
                 <svg width="172" height="277" viewBox="0 0 172 277" fill="none" xmlns="http://www.w3.org/2000/svg" id="line1">
                     <path d="M171 0C171 277 1 0 1 277" stroke="#77D75E" strokeWidth={3}/>
                 </svg>
@@ -39,9 +45,9 @@ function Background(props) {
                 </svg>
             </div>
 
-            <div className="line hidden xl:flex -mt-[5rem]">
-                <svg className="w-[5px]" ref={svgRef} viewBox="0 0 2 1667" fill="none" xmlns="http://www.w3.org/2000/svg" >
-                    <path id="linePath" d="M 1.2745 -0.0091 V 6117" stroke="#77D75E" strokeWidth={2.5}/>
+            <div className="line hidden xl:flex mt-[275px]" ref={svgRef}>
+                <svg viewBox="0 0 2 1667" fill="none" xmlns="http://www.w3.org/2000/svg" >
+                    <path id="linePath" d="M 1.2745 -0.0091 V 6117" stroke="#77D75E" strokeWidth={1.5}/>
                 </svg>
             </div>
         </>

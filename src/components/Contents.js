@@ -49,12 +49,14 @@ function Contents(props) {
         }
     }
 
+    const welcomePosition = useRef(null)
+
     return (
         <>
-            <Bachgroundline lineHeight={props.formPosition} />
+            <Bachgroundline lineHeight={props.formPosition} lineStart={welcomePosition} />
 
             {/* Welcome section */}
-            <div className="image mt-44">
+            <div className="image mt-44" ref={welcomePosition}>
                 <img src={images['background.png']} alt="background" width={30} height={30} className="blur-lg" data-Aos='zoom-in' data-Aos-delay="150" />
                 <img src={images['home.png']} alt="home"width={30} height={30} className="absolute" data-Aos='zoom-in' />
             </div>
