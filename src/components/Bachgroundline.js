@@ -5,16 +5,18 @@ import useDivDimensions from "../hooks/DivDimensionsHook";
 function Background(props) {
     const lineHeight = useDivPosition(props.lineHeight)
     const lineStart = useDivPosition(props.lineStart)
+    const divRef = useRef(null)
     const svgRef = useRef(null)
 
     const topLinesRef = useRef(null)
     const divDimnesions = useDivDimensions(topLinesRef)
 
-    if(svgRef.current === null) {
+    if(divRef.current === null) {
         // do nothing
     } else {
-        svgRef.current.style.height = `${lineHeight - divDimnesions.height}px`
-        svgRef.current.style.marginTop = `${lineStart}px`
+        divRef.current.style.height = `${lineHeight - divDimnesions.height}px`
+        divRef.current.style.marginTop = `${lineStart}px`
+        svgRef.current.style.height = `${lineHeight}px`
     }
 
     useEffect(() => {
@@ -45,8 +47,8 @@ function Background(props) {
                 </svg>
             </div>
 
-            <div className="line hidden xl:flex mt-[275px]" ref={svgRef}>
-                <svg viewBox="0 0 2 1667" fill="none" xmlns="http://www.w3.org/2000/svg" >
+            <div className="line hidden xl:flex mt-[275px] w-[5px]" ref={divRef}>
+                <svg viewBox="0 0 2 1667" className="absolute top-0" ref={svgRef} fill="none" xmlns="http://www.w3.org/2000/svg" >
                     <path id="linePath" d="M 1.2745 -0.0091 V 6117" stroke="#77D75E" strokeWidth={1.5}/>
                 </svg>
             </div>

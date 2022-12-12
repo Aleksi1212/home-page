@@ -43,7 +43,7 @@ function Contents(props) {
 
     function viewRepo(page) {
         if (width < 976) {
-            window.location.href = page
+            window.open(page, '_blank')
         } else {
             // do nothing
         }
@@ -115,7 +115,7 @@ function Contents(props) {
                 {/* firs project */}
                 <div className="project-cards">
 
-                    <div className="card-container xl:mb-0 mb-2" onClick={() => viewRepo()}>
+                    <div className="card-container xl:mb-0 mb-2" onClick={() => viewRepo("https://github.com/Aleksi1212/cardatabase")}>
 
                         <div className="databaseCard" id="card1" data-Aos="fade-right" data-Aos-delay="200">
                             <div className="contentBox">
@@ -126,7 +126,7 @@ function Contents(props) {
                                 </p>
 
                                 <div className="source-button"> 
-                                    <a className="alt-source-button w-[100px] ml-8">
+                                    <a className="alt-source-button w-[100px] ml-8" href="https://github.com/Aleksi1212/cardatabase" target="_blank">
                                         <img src={images['github.png']} alt="databaseSource" />
                                         <span className="-ml-[2.3rem] xxxl:text-base lg:text-sm">Source</span>
                                     </a>
