@@ -121,11 +121,11 @@ function Contents(props) {
                             <div className="contentBox">
                                 <h2 className="xxxl:text-2xl lg:text-lg">Car database</h2>
                                 <p className="contentInfo">
-                                    Server built with Node.JS,
+                                    Server and routes built with Node.JS and express,
                                     frontend with ejs and database uses MariaDB
                                 </p>
 
-                                <div className="source-button"> 
+                                <div className="source-button -mt-5"> 
                                     <a className="alt-source-button w-[100px] ml-8" href="https://github.com/Aleksi1212/cardatabase" target="_blank">
                                         <img src={images['github.png']} alt="databaseSource" />
                                         <span className="-ml-[2.3rem] xxxl:text-base lg:text-sm">Source</span>
@@ -136,17 +136,17 @@ function Contents(props) {
                     </div>
 
                     {/* second project */}
-                    <div className="card-container xl:mb-0 mb-2" onClick={() => viewRepo()}>
+                    <div className="card-container xl:mb-0 mb-2" onClick={() => viewRepo('https://github.com/Aleksi1212/rest_api')}>
 
                         <div className="apiCard" id="card2" data-Aos="fade-right" data-Aos-delay="400">
                             <div className="contentBox">
                                 <h2 className="xxxl:text-2xl lg:text-lg">RESTful api</h2>
                                 <p className="contentInfo">
-                                    Built with Node.JS and ExpressJS
+                                    Built with Node.JS and Express
                                 </p>
 
                                 <div className="source-button">
-                                    <a className="alt-source-button w-[100px] ml-8">
+                                    <a className="alt-source-button w-[100px] ml-8" href="https://github.com/Aleksi1212/rest_api" target="_blank">
                                         <img src={images['github.png']} alt="databaseSource" />
                                         <span className="-ml-[2.3rem] xxxl:text-base lg:text-sm">Source</span>
                                     </a>

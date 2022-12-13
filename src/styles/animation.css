@@ -182,19 +182,13 @@
 }
 
 .apiCard:after {
-    content: 'ExpressJS';
+    content: 'Express';
 }
 
 .spaceCard:after {
     content: 'Python';
 }
 
-@media (max-width: 976px) {
-    .databaseCard:before, .apiCard:before, .spaceCard:before {
-        background-size: 110%;
-        background-position: -250%;
-    }
-}
 
 .contentBox {
     transition: 1s;
@@ -220,4 +214,15 @@
     opacity: 1;
     transform: translateY(0);
     transition-delay: .75s;
+}
+
+@media (max-width: 976px) {
+    .databaseCard:before, .apiCard:before, .spaceCard:before {
+        background-size: 110%;
+        background-position: -250%;
+    }
+
+    .contentInfo, .source-button {
+        display: none;
+    }
 }
