@@ -32,7 +32,7 @@
     }
 
     .menubars {
-        @apply flex h-10 w-10 ml-8 mt-10 flex-col justify-evenly cursor-pointer absolute xl:hidden
+        @apply flex h-[2.3rem] w-[2.3rem] ml-8 mt-10 flex-col justify-evenly cursor-pointer absolute xl:hidden
     }
 
     .menu-line {
@@ -87,28 +87,8 @@
         @apply absolute xxxl:left-[37%] xl:left-[35%] flex justify-center w-[100px] h-[30px] xl:overflow-hidden overflow-visible
     }
 
-    .project {
-        @apply xl:w-[32%] xl:h-[98%] w-full h-[45%] rounded-[15px] overflow-hidden
-    }
-
-    .project img {
-        @apply object-cover h-full w-full absolute cursor-pointer
-    }
-
-    .projectinfo {
-        @apply pl-[5%] xl:pt-[4%] w-full xl:h-[20%] h-full absolute bottom-[-20%]  bg-lighterGray border-b-4 border-limeGreen xl:inline-block hidden rounded-tr-[30px] 
-    }
-
     .home-container p, .about-container p, .thankYou-container p {
         @apply xl:text-[140%] whitespace-normal
-    }
-
-    .projectinfo h1 {
-        @apply xxxl:text-2xl xl:text-[100%]
-    }
-
-    .projectinfo p {
-        @apply xxxl:text-lg xl:text-[90%] whitespace-normal text-[grey]
     }
 
     .image {

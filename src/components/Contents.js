@@ -125,9 +125,9 @@ function Contents(props) {
                                     frontend with ejs and database uses MariaDB
                                 </p>
 
-                                <div className="source-button -mt-5"> 
+                                <div className="source-button xxxl:-mt-5 xl:-mt-2"> 
                                     <a className="alt-source-button w-[100px] ml-8" href="https://github.com/Aleksi1212/cardatabase" target="_blank">
-                                        <img src={images['github.png']} alt="databaseSource" />
+                                        <img src={images['github.png']} alt="databaseSource" className="xxxl:w-[30px] xl:w-[25px]" />
                                         <span className="-ml-[2.3rem] xxxl:text-base lg:text-sm">Source</span>
                                     </a>
                                 </div>
@@ -147,7 +147,7 @@ function Contents(props) {
 
                                 <div className="source-button">
                                     <a className="alt-source-button w-[100px] ml-8" href="https://github.com/Aleksi1212/rest_api" target="_blank">
-                                        <img src={images['github.png']} alt="databaseSource" />
+                                        <img src={images['github.png']} alt="databaseSource" className="xxxl:w-[30px] xl:w-[25px]" />
                                         <span className="-ml-[2.3rem] xxxl:text-base lg:text-sm">Source</span>
                                     </a>
                                 </div>
@@ -156,7 +156,7 @@ function Contents(props) {
                     </div>
 
                     {/* third project */}
-                    <div className="card-container" onClick={() => viewRepo()}>
+                    <div className="card-container" onClick={() => viewRepo('https://github.com/Aleksi1212/Python-space-simulation')}>
 
                         <div className="spaceCard" id="card3" data-Aos="fade-right" data-Aos-delay="600">
                             <div className="contentBox">
@@ -166,9 +166,9 @@ function Contents(props) {
                                 </p>
 
                                 <div className="source-button"> 
-                                    <a className="alt-source-button w-[100px] ml-8">
-                                        <img src={images['github.png']} alt="databaseSource" />
-                                        <span className="-ml-[2.3rem] xxxl:text-base lg:text-sm">Source</span>
+                                    <a className="alt-source-button w-[100px] ml-8" href="https://github.com/Aleksi1212/Python-space-simulation" target="_blank">
+                                        <img src={images['github.png']} alt="databaseSource" className="xxxl:w-[30px] xl:w-[25px]" />
+                                        <span className="-ml-[2.3rem] xxxl:text-base xl:text-sm">Source</span>
                                     </a>
                                 </div>
                             </div>
