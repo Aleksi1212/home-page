@@ -197,12 +197,12 @@ function Contents(props) {
                 <div className="buttons">
                     <a className="alt-button" href="https://github.com/Aleksi1212/home-page" target="_blank">
                         <img src={images['github.png']} alt="source" className="xxxl:ml-[8px] ml-[10px] xxxl:w-[30px] xl:w-[25px] w-[20px]" data-Aos="fade-right" data-Aos-delay="400" />
-                        <span className="view-text" data-Aos="fade-right" data-Aos-delay="400">Source</span>
+                        <span className="view-text xl:text-base text-[13px]" data-Aos="fade-right" data-Aos-delay="400">Source</span>
                     </a>
 
                     <a className="alt-button" href="#root">
-                        <img src={images['top.png']} alt="back-to-top" width={25} height={25} className="ml-[20px] xl:mt-[.15rem] xxxl:w-[30px] xl:w-[25px] w-[20px]" data-Aos="fade-right" data-Aos-delay="600" />
-                        <span className="view-text xl:pt-[3px]" data-Aos="fade-right" data-Aos-delay="600">Back to top</span>
+                        <img src={images['top.png']} alt="back-to-top" width={25} height={25} className="ml-[20px] xl:mt-[.15rem] xxxl:w-[25px] xl:w-[20px] w-[20px]" data-Aos="fade-right" data-Aos-delay="600" />
+                        <span className="view-text xl:pt-[3px] xl:text-base text-[13px]" data-Aos="fade-right" data-Aos-delay="600">Back to top</span>
                     </a>
                 </div>
             </section>
