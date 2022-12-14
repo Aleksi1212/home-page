@@ -1,8 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+// imports
+import { useRef } from "react";
 import useWindowDimensions from "../hooks/WindowSizeHook";
 import emailjs from '@emailjs/browser'
 import Contents from "./Contents";
+import { NULL } from "mysql/lib/protocol/constants/types";
 
+// function to import all images
 function importAll(dir) {
     let images = {}
     dir.keys().map((item, index) => {
@@ -15,36 +18,29 @@ function importAll(dir) {
 function Contact() {
     const images = importAll(require.context('../images', false, /\.(png|jpe?g|svg)$/))
 
-    const formRef = useRef()
+    // refs
+    const imageRef = useRef(null)
+    const formRef = useRef(null)
     const alertRefs = {
-        alertBox: useRef(),
-        header: useRef(),
-        success: useRef(),
-        error: useRef(),
-        status: useRef()
+        alertBox: useRef(null),
+        header: useRef(null),
+        success: useRef(null),
+        error: useRef(null),
+        status: useRef(null)
     }
 
     const { height, width } = useWindowDimensions() 
 
-    const imageRef = useRef()
-
+    // email sender
     const sendEmail = (exp) => {
         exp.preventDefault()
 
         emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPELATE_ID, formRef.current, process.env.REACT_APP_PUBLIC_KEY)
             .then((res) => {
                 formRef.current.reset()
-
-                if (width < 1080) {
-                    alertRefs.alertBox.current.style.marginLeft = '3rem'
-                } else {
-                    alertRefs.alertBox.current.style.marginLeft = '10rem'
-                }
-
-                alertRefs.success.current.style.display = 'flex'
-                alertRefs.status.current.innerHTML = 'Succesfully sent'
-                document.getElementById('load').style.display = 'none'
-
+                
+                // alert if email sent
+                showAlert(alertRefs, alertRefs.success, '#75d77e', 'Succesfully sent')
                 clearAlert()
 
                 console.log(res);
@@ -52,29 +48,36 @@ function Contact() {
             }, (err) => {
                 formRef.current.reset()
 
-                if (width < 1080) {
-                    alertRefs.alertBox.current.style.marginLeft = '3rem'
-                } else {
-                    alertRefs.alertBox.current.style.marginLeft = '10rem'
-                }
-
-                alertRefs.header.current.style.backgroundColor = 'red'
-                alertRefs.error.current.style.display = 'flex'
-                alertRefs.status.current.innerHTML = 'An error occurred'
-                document.getElementById('load').style.display = 'none'
-
+                // alert if email didn't send
+                showAlert(alertRefs, alertRefs.error, 'red', 'An error occurred')
                 clearAlert()
 
                 console.log(err);
             })
 
+        // function to clear alert
         const clearAlert = () => {
             const clear = setTimeout(() => {
                 alertRefs.alertBox.current.style.marginLeft = '-20rem'
-            }, 3000)
+            }, 2500)
         }
     }
 
+    // function to show alert
+    function showAlert(refs, state, color, message) {
+        if (width < 1080) {
+            refs.alertBox.current.style.marginLeft = '3rem'
+        } else {
+            refs.alertBox.current.style.marginLeft = '10rem'
+        }
+
+        refs.header.current.style.backgroundColor = color
+        state.current.style.display = 'flex'
+        refs.status.current.innerHTML = message
+        document.getElementById('load').style.display = 'none'
+    }
+
+    // function to show loader
     function showLoad() {
         let values = formRef.current
         if (values.name.value !== '' && values.email.value !== '' && values.message.value !== '') {
@@ -86,6 +89,7 @@ function Contact() {
 
     return (
         <>
+            {/* Contents */}
             <Contents formPosition={imageRef} />
 
             {/* Contact form */}
@@ -98,6 +102,7 @@ function Contact() {
                 <div className="section-header" data-Aos="fade-right">
                     <h1>Contact me</h1>
                 </div>
+
                 <div id="form-wrapper" data-Aos="fade-right" data-Aos-delay="200">
                     <form id="contact-form" ref={formRef} onSubmit={sendEmail} >
                         <div className="col-sm-12 input-container">
@@ -135,27 +140,31 @@ function Contact() {
             </div>
 
             <div className="alert" ref={alertRefs.alertBox}>
+
                 <div className="alertheader" ref={alertRefs.header}>
                     <img src={images['check.png']} alt="success" className="alert-image" ref={alertRefs.success} />
                     <img src={images['close.png']} alt="denial" className="alert-image" ref={alertRefs.error} />
                 </div>
                 <h1 ref={alertRefs.status} className="xl:mt-6 mt-3 ml-2 xl:text-base text-sm"></h1>
+
             </div>
 
             {/* footer sectionn */}
             <footer className="footer">
+
                 <div className="inline text-center xl:text-2xl text-xl xl:ml-0 ml-10">
                     <h1>Socials</h1>
                     <div className="flex w-20 justify-between pt-2">
-                        <a href="https://github.com/Aleksi1212">
+                        <a href="https://github.com/Aleksi1212" target="_blank">
                             <img src={images['github.png']} alt="github" id="github" />
                         </a>
-                        <a href="https://www.linkedin.com/in/aleksi-noro-8ba447249/">
+                        <a href="https://www.linkedin.com/in/aleksi-noro-8ba447249/" target="_blank">
                             <img src={images['linkedin.png']} alt="linkedin" id="linkedin" />
                         </a>
                     </div>
                 </div>
                 <p className="opacity-50 mt-40 -ml-[7rem] text-sm">Copyright © Aleksi Noro</p>
+
             </footer>
         </>
     )

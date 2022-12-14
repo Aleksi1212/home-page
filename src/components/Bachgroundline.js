@@ -1,10 +1,12 @@
+// imports
 import React, { useEffect, useRef } from "react"
 import useDivPosition from "../hooks/DivPositionHoook";
 import useDivDimensions from "../hooks/DivDimensionsHook";
 
+// component start
 function Background(props) {
-    const lineHeight = useDivPosition(props.lineHeight)
-    const lineStart = useDivPosition(props.lineStart)
+    const lineHeight = useDivPosition(props.lineHeight) // set line height as form positon
+    const lineStart = useDivPosition(props.lineStart) // set line start as welcome image position
     const divRef = useRef(null)
     const svgRef = useRef(null)
 
@@ -19,6 +21,7 @@ function Background(props) {
         svgRef.current.style.height = `${lineHeight}px`
     }
 
+    // draw background svg on scroll
     useEffect(() => {
         let path = document.getElementById('linePath')
         let pathLength = path.getTotalLength()
@@ -32,7 +35,7 @@ function Background(props) {
             
             path.style.strokeDashoffset = pathLength - draw
         })
-    }, [props])
+    }, [])
 
 
     return (

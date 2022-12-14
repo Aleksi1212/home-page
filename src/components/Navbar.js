@@ -2,6 +2,7 @@ import Progressbar from 'react-progressbar-on-scroll'
 
 function Navbar() {
 
+    // mobile menu actions
     function rotateMenu() {
         let menubars = document.getElementById('menubars')
         let lines = [document.getElementById('line1'), document.getElementById('line2'), document.getElementById('line3')]
@@ -43,6 +44,8 @@ function Navbar() {
         <>
             <header className="navbar">
                 <div className="flex justify-evenly w-2/5 mr-10">
+
+                    {/* About button */}
                     <div className="svg-wrapper">
                         <svg height={70} width={200} xmlns="http://www.w3.org/2000/svg">
                             <rect className="animation" height={60} width={100} rx={30} x={2} y={2}/>
@@ -54,6 +57,7 @@ function Navbar() {
                         </button>
                     </div>
                     
+                    {/* Projects button */}
                     <div className="svg-wrapper">
                         <svg height={70} width={200} xmlns="http://www.w3.org/2000/svg">
                             <rect className="animation" height={60} width={100} rx={30} x={2} y={2}/>
@@ -65,6 +69,7 @@ function Navbar() {
                         </button>
                     </div>
 
+                    {/* Contact button */}
                     <div className="svg-wrapper">
                         <svg height={70} width={200} xmlns="http://www.w3.org/2000/svg">
                             <rect className="animation" height={60} width={100} rx={30} x={2} y={2}/>
@@ -77,21 +82,25 @@ function Navbar() {
                     </div>
                 </div>
                     
+                {/* Mobile menu */}
                 <div className='menu' id='menu'>
                     <ul className='flex justify-between w-[50%]'>
+
+                        {/* About button */}
                         <li className='link' id='aboutLink'>
                             <a href='#about'>
                                 <span className='text-limeGreen'>.</span>about<span className='text-limeGreen'>()</span>
                             </a>
-
                         </li>
 
+                        {/* Projects button */}
                         <li className='link' id='projectLink'>
                             <a href='#projects'>
                                 <span className='text-limeGreen'>.</span>projects<span className='text-limeGreen'>()</span>
                             </a>
                         </li>
 
+                        {/* Contact button */}
                         <li className='link' id='contactLink'>
                             <a href='#contact-form'>
                                 <span className='text-limeGreen'>.</span>contact<span className='text-limeGreen'>()</span>
@@ -100,6 +109,7 @@ function Navbar() {
                     </ul>
                 </div>
 
+                {/* Mobile menubars */}
                 <div className='menubars' id='menubars' onClick={rotateMenu}>
                     <span className='menu-line' id='line1'></span>
                     <span className='menu-line' id='line2'></span>
@@ -107,6 +117,7 @@ function Navbar() {
                 </div>
             </header>
 
+            {/* Progressbar */}
             <div>
                 <Progressbar 
                     color="#75d77e"

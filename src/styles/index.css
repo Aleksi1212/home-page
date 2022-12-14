@@ -3,6 +3,27 @@
 @tailwind utilities;
 
 @layer components {
+    /* svg lines styles start */
+    .top-lines {
+        @apply hidden xl:inline absolute top-0 overflow-hidden
+    }
+
+    .top-lines #line1 {
+        @apply ml-[10.75rem] -mt-[.1rem]
+    }
+
+    .top-lines #line2 {
+        @apply -ml-[2rem] -mt-[11rem]
+    }
+
+    .line {
+        @apply absolute overflow-hidden ml-[10.75rem] top-0
+    }
+    /* svg lines styles end */
+
+    /* -------------------------- */
+
+    /* navbar styles start */
     .svg-wrapper {
         @apply translate-y-1/2
     }
@@ -18,25 +39,29 @@
     .navbar {
         @apply top-0 flex xl:justify-end justify-start w-full
     }
-
-    .section-header {
-        @apply text-limeGreen xl:pb-4 pb-2 xxxl:text-4xl xl:text-3xl
-    }
-
+    
     .animation {
         @apply hidden xl:flex
     }
-
+    
     .menu {
         @apply w-full h-[7.5rem] xl:hidden flex justify-center items-center absolute
     }
-
+    
     .menubars {
         @apply flex h-[2.3rem] w-[2.3rem] ml-8 mt-10 flex-col justify-evenly cursor-pointer absolute xl:hidden
     }
-
+    
     .menu-line {
         @apply block h-[4px] w-full rounded-[10px] bg-white
+    }
+    /* navbar styles end */
+    
+    /* ---------------------------- */
+
+    /* content styles start */
+    .section-header {
+        @apply text-limeGreen xl:pb-4 pb-2 xxxl:text-4xl xl:text-3xl
     }
 
     .home-container, .about-container, .thankYou-container, .form-container {
@@ -72,7 +97,7 @@
     }
 
     .contentBox {
-        @apply absolute xxxl:bottom-0 xxl:bottom-[-5%] md:bottom-[-10%] bottom-[-30%] md:w-full w-[60%] h-[100px] xl:text-center xl:pl-0 md:pl-12 pl-6
+        @apply absolute xxl:bottom-[-5%] bottom-0 md:w-full w-[60%] xl:h-[100px] h-full xl:text-center xl:pl-0 md:pl-12 pl-6
     }
 
     .databaseCard:hover .contentBox, .apiCard:hover .contentBox, .spaceCard:hover .contentBox {
@@ -85,74 +110,6 @@
 
     .source-button {
         @apply absolute xxxl:left-[37%] xl:left-[35%] flex justify-center w-[100px] h-[30px] xl:overflow-hidden overflow-visible
-    }
-
-    .home-container p, .about-container p, .thankYou-container p {
-        @apply xl:text-[140%] whitespace-normal
-    }
-
-    .image {
-        @apply ml-12 xl:ml-40 flex justify-start py-5 bg-veryDarkBlue w-8 xxxl:mt-[35%] xl:mt-[50%] mt-[70%]
-    }
-
-    .image img {
-        @apply xl:w-[30px] xl:h-[30px] w-[20px] h-[20px]
-    }
-
-    .top-lines {
-        @apply hidden xl:inline absolute top-0 overflow-hidden
-    }
-
-    #form-wrapper {
-        @apply absolute flex flex-row justify-start w-[62%] h-[34%] 
-    }
-
-    .input-container {
-        @apply xxxl:w-[25rem] w-[90%] md:w-[20rem]
-    }
-
-    .form-input {
-        @apply w-full mt-[2rem] p-[5px] bg-transparent border-b-2 xxxl:text-xl xl:text-lg text-base font-thin overflow-hidden
-    }
-
-    .form-input:focus {
-        @apply border-b-[3px] border-limeGreen
-    }
-
-    .form-input:not(:placeholder-shown) {
-        @apply border-b-2 border-limeGreen
-    }
-
-    .placeholder, .message-placeholder {
-        @apply left-[.3rem] pt-[2.3rem] absolute pointer-events-none opacity-50
-    }
-
-    .form-submit {
-        @apply flex justify-center bg-limeGreen cursor-pointer xl:w-full w-[60%] h-[30px] mt-[.5rem] rounded-[5px] overflow-hidden
-    }
-
-    .mobile-submit {
-        @apply bg-limeGreen w-[90%] md:w-full cursor-pointer h-[30px] rounded-[5px]
-    }
-
-    .alert {
-        @apply absolute xl:w-[17rem] xl:h-[85px] md:w-[13rem] md:h-[70px] w-[10rem] h-[60px] -ml-[20rem] xl:mt-[5rem] rounded-[5px] bg-[#2f2f2f] inline
-    }
-
-    .alertheader {
-        @apply xl:w-[17rem] xl:h-[18px] md:w-[13rem] w-[10rem] h-[15px] rounded-bl-none rounded-br-none rounded-tl-[5px] rounded-tr-[5px] items-center pl-[5px] flex bg-limeGreen
-    }
-
-    .alert-image {
-        @apply hidden xl:w-4 xl:h-4 w-[.7rem] h-[.7rem]
-    }
-
-    .load-container {
-        @apply xxxl:w-[25rem] w-[90%] md:w-[20rem] h-[40px] mt-[2%] flex justify-end
-    }
-
-    .loader {
-        @apply hidden h-[40px] w-[40px]
     }
 
     .show-more {
@@ -171,19 +128,79 @@
         @apply block mt-[5px] xl:text-base text-sm
     }
 
+    .home-container p, .about-container p, .thankYou-container p {
+        @apply xl:text-[140%] whitespace-normal
+    }
+
+    .image {
+        @apply ml-12 xl:ml-40 flex justify-start py-5 bg-veryDarkBlue w-8 xxxl:mt-[35%] xl:mt-[50%] mt-[70%]
+    }
+
+    .image img {
+        @apply xl:w-[30px] xl:h-[30px] w-[20px] h-[20px]
+    }
+    /* content styles end */
+
+    /* ----------------------- */
+
+    /* contact form styles start */
+    #form-wrapper {
+        @apply absolute flex flex-row justify-start w-[62%] h-[34%] 
+    }
+
+    .input-container {
+        @apply xxxl:w-[25rem] w-[90%] md:w-[20rem]
+    }
+    
+    .form-input {
+        @apply w-full mt-[2rem] p-[5px] bg-transparent border-b-2 xxxl:text-xl xl:text-lg text-base font-thin overflow-hidden
+    }
+    
+    .form-input:focus {
+        @apply border-b-[3px] border-limeGreen
+    }
+    
+    .form-input:not(:placeholder-shown) {
+        @apply border-b-2 border-limeGreen
+    }
+    
+    .placeholder, .message-placeholder {
+        @apply left-[.3rem] pt-[2.3rem] absolute pointer-events-none opacity-50
+    }
+
+    .form-submit {
+        @apply flex justify-center bg-limeGreen cursor-pointer xl:w-full w-[60%] h-[30px] mt-[.5rem] rounded-[5px] overflow-hidden
+    }
+
+    .mobile-submit {
+        @apply bg-limeGreen w-[90%] md:w-full cursor-pointer h-[30px] rounded-[5px]
+    }
+
+    .alert {
+        @apply absolute xl:w-[17rem] xl:h-[85px] md:w-[13rem] md:h-[70px] w-[10rem] h-[60px] -ml-[20rem] xl:mt-[5rem] rounded-[5px] bg-[#2f2f2f] inline
+    }
+
+    .alertheader {
+        @apply xl:w-[17rem] xl:h-[18px] md:w-[13rem] w-[10rem] h-[15px] rounded-bl-none rounded-br-none rounded-tl-[5px] rounded-tr-[5px] items-center pl-[5px] flex
+    }
+
+    .alert-image {
+        @apply hidden xl:w-4 xl:h-4 w-[.7rem] h-[.7rem]
+    }
+
+    .load-container {
+        @apply xxxl:w-[25rem] w-[90%] md:w-[20rem] h-[40px] mt-[2%] flex justify-end
+    }
+
+    .loader {
+        @apply hidden h-[40px] w-[40px]
+    }
+    /* contact form styles end */
+
+    /* ------------------------------ */
+
+    /* footer styles */
     .footer {
         @apply w-full bg-darkGrey h-60 mt-[50%] flex justify-center pt-10
-    }
-
-    .top-lines #line1 {
-        @apply ml-[10.75rem] -mt-[.1rem]
-    }
-
-    .top-lines #line2 {
-        @apply -ml-[2rem] -mt-[11rem]
-    }
-
-    .line {
-        @apply absolute overflow-hidden ml-[10.75rem] top-0
     }
 }

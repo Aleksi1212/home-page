@@ -1,3 +1,4 @@
+// imports
 import { useEffect, useRef } from "react"
 import Aos from "aos"
 import 'aos/dist/aos.css'
@@ -16,8 +17,10 @@ function importAll(dir) {
 
 function Contents(props) {
     useEffect(() => {
+        // initialize animatie on scroll library
         Aos.init()
 
+        // about sections mobile button actions
         let showMore = document.getElementById('show-more')
         let showLess = document.getElementById('show-less')
         let about = document.getElementById('about')
@@ -112,15 +115,15 @@ function Contents(props) {
                     <h1>Projects</h1>
                 </div>
 
-                {/* firs project */}
+                {/* first project */}
                 <div className="project-cards">
 
                     <div className="card-container xl:mb-0 mb-2" onClick={() => viewRepo("https://github.com/Aleksi1212/cardatabase")}>
 
                         <div className="databaseCard" id="card1" data-Aos="fade-right" data-Aos-delay="200">
                             <div className="contentBox">
-                                <h2 className="xxxl:text-2xl lg:text-lg">Car database</h2>
-                                <p className="contentInfo">
+                                <h2 className="xxxl:text-2xl lg:text-lg absolute bottom-2 xl:relative">Car database</h2>
+                                <p className="contentInfo xxxl:-mt-8">
                                     Server and routes built with Node.JS and express,
                                     frontend with ejs and database uses MariaDB
                                 </p>
@@ -140,7 +143,7 @@ function Contents(props) {
 
                         <div className="apiCard" id="card2" data-Aos="fade-right" data-Aos-delay="400">
                             <div className="contentBox">
-                                <h2 className="xxxl:text-2xl lg:text-lg">RESTful api</h2>
+                                <h2 className="xxxl:text-2xl lg:text-lg absolute bottom-2 xl:relative">RESTful api</h2>
                                 <p className="contentInfo">
                                     Built with Node.JS and Express
                                 </p>
@@ -160,7 +163,7 @@ function Contents(props) {
 
                         <div className="spaceCard" id="card3" data-Aos="fade-right" data-Aos-delay="600">
                             <div className="contentBox">
-                                <h2 className="xxxl:text-2xl lg:text-lg">Python space simulation</h2>
+                                <h2 className="xxxl:text-2xl lg:text-lg absolute bottom-2 xl:relative">Python space simulation</h2>
                                 <p className="contentInfo">
                                     Built with using Python and PyGame
                                 </p>
@@ -192,14 +195,14 @@ function Contents(props) {
                     to make myself a protfolio site<span className="text-limeGreen">.</span>
                 </p>
                 <div className="buttons">
-                    <a className="alt-button">
-                        <img src={images['github.png']} alt="source" className="ml-[8px]" data-Aos="fade-right" data-Aos-delay="400" />
+                    <a className="alt-button" href="https://github.com/Aleksi1212/home-page" target="_blank">
+                        <img src={images['github.png']} alt="source" className="xxxl:ml-[8px] ml-[10px] xxxl:w-[30px] xl:w-[25px] w-[20px]" data-Aos="fade-right" data-Aos-delay="400" />
                         <span className="view-text" data-Aos="fade-right" data-Aos-delay="400">Source</span>
                     </a>
 
                     <a className="alt-button" href="#root">
-                        <img src={images['top.png']} alt="back-to-top" width={25} height={25} className="ml-[20px] mt-[.15rem]" data-Aos="fade-right" data-Aos-delay="600" />
-                        <span className="view-text pt-[3px]" data-Aos="fade-right" data-Aos-delay="600">Back to top</span>
+                        <img src={images['top.png']} alt="back-to-top" width={25} height={25} className="ml-[20px] xl:mt-[.15rem] xxxl:w-[30px] xl:w-[25px] w-[20px]" data-Aos="fade-right" data-Aos-delay="600" />
+                        <span className="view-text xl:pt-[3px]" data-Aos="fade-right" data-Aos-delay="600">Back to top</span>
                     </a>
                 </div>
             </section>
