@@ -131,7 +131,7 @@
 /* ------------------------------ */
 
 /* project card animations start */
-.databaseCard:before, .apiCard:before, .spaceCard:before {
+.databaseCard:before, .apiCard:before, .spaceCard:before, .movieCard:before {
     content: '';
     background: url('../images/database.png');
     background-size: 160%;
@@ -143,12 +143,17 @@
     background-size: 130%;
 }
 
-
 .spaceCard:before {
     background: url('../images/space.png');
 }
 
-.databaseCard:after, .apiCard:after, .spaceCard:after {
+.movieCard:before {
+    background: url('../images/camera.png') no-repeat 0 0;
+    background-size: 150%;
+    background-position: 0 -15%;
+}
+
+.databaseCard:after, .apiCard:after, .spaceCard:after, .movieCard:after {
     content: 'Node.JS';
     color: rgba(117, 215,126, .1);
 }
@@ -161,6 +166,10 @@
     content: 'Python';
 }
 
+.movieCard:after {
+    content: 'C#';
+}
+
 .contentBox {
     transition: 1s;
 }
@@ -169,7 +178,7 @@
     transition: .5s;
 }
 
-.databaseCard:hover .contentInfo, .apiCard:hover .contentInfo, .spaceCard:hover .contentInfo {
+.databaseCard:hover .contentInfo, .apiCard:hover .contentInfo, .spaceCard:hover .contentInfo, .movieCard:hover .contentInfo {
     opacity: 1;
     visibility: visible;
     transition-delay: .6s;
@@ -181,7 +190,7 @@
     opacity: 0;
 }
 
-.databaseCard:hover .source-button, .apiCard:hover .source-button, .spaceCard:hover .source-button {
+.databaseCard:hover .source-button, .apiCard:hover .source-button, .spaceCard:hover .source-button, .movieCard:hover .source-button {
     opacity: 1;
     transform: translateY(0);
     transition-delay: .75s;
@@ -191,6 +200,11 @@
     .databaseCard:before, .apiCard:before, .spaceCard:before {
         background-size: 110%;
         background-position: -250%;
+    }
+
+    .movieCard:before {
+        background-size: 90%;
+        background-position: 350% -10%;
     }
     
     .contentInfo, .source-button {
@@ -208,4 +222,10 @@
 
 #github:hover, #linkedin:hover {
     transform: scale(1.3);
+}
+
+.wave {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
 }

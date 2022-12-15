@@ -69,38 +69,46 @@
     }
 
     .project-container {
-        @apply xl:ml-60 ml-20 xl:-mt-16 -mt-[2.7rem] w-[62%] xxxl:h-[40rem] h-[30rem]
+        @apply xl:ml-60 ml-20 xl:-mt-16 -mt-[2.7rem] md:w-[80%] w-[62%] h-[40rem]
     }
 
     .project-cards {
-        @apply xl:h-[60%] w-[62%] h-[37%] xl:flex xl:justify-between absolute inline
+        @apply xl:h-[60%] md:w-[80%] w-[62%] h-[37%] xl:flex xl:justify-between absolute inline gap-4
     }
 
     .card-container {
         @apply xl:w-[32%] xl:h-[98%] w-full h-[45%] rounded-[15px] overflow-hidden relative
     }
 
-    .databaseCard, .apiCard, .spaceCard {
+    .databaseCard, .apiCard, .spaceCard, .movieCard {
         @apply w-full h-full rounded-[15px] overflow-hidden bg-darkGrey
     }
 
-    .databaseCard:before, .apiCard:before, .spaceCard:before {
+    .databaseCard:before, .apiCard:before, .spaceCard:before, .movieCard:before {
         @apply absolute top-[30%] left-[7%] xl:top-0 xl:left-0 w-full h-full xxxl:clip-path-imageCircle xl:clip-path-mdImageCircle md:clip-path-tabletImageCircle clip-path-mobileImageCircle
     }
 
-    .databaseCard:hover:before, .apiCard:hover:before, .spaceCard:hover:before {
+    .databaseCard:hover:before, .apiCard:hover:before, .spaceCard:hover:before, .movieCard:hover:before {
         @apply xxxl:clip-path-imageCircleMove xl:clip-path-mdImageCircleMove
     }
 
-    .databaseCard:after, .apiCard:after, .spaceCard:after {
+    .databaseCard:after, .apiCard:after, .spaceCard:after, .movieCard:after {
         @apply absolute xxxl:top-[45%] xl:top-[50%] top-[20%] xxxl:left-[-5%] xl:left-[-3%] left-[10%] xxxl:text-[7em] xl:text-[5em] md:text-[4em] text-[2em] font-[700] italic
+    }
+
+    .spaceCard:after {
+        @apply xxxl:left-[1%] xl:left-0 left-[10%]
+    }
+
+    .movieCard:after {
+        @apply xl:left-[25%] left-[10%]
     }
 
     .contentBox {
         @apply absolute xxl:bottom-[-5%] bottom-0 md:w-full w-[60%] xl:h-[100px] h-full xl:text-center xl:pl-0 md:pl-12 pl-6
     }
 
-    .databaseCard:hover .contentBox, .apiCard:hover .contentBox, .spaceCard:hover .contentBox {
+    .databaseCard:hover .contentBox, .apiCard:hover .contentBox, .spaceCard:hover .contentBox, .movieCard:hover .contentBox {
         @apply xxxl:h-[210px] xl:h-[185px]
     }
 
@@ -133,7 +141,7 @@
     }
 
     .image {
-        @apply ml-12 xl:ml-40 flex justify-start py-5 bg-veryDarkBlue w-8 xxxl:mt-[35%] xl:mt-[50%] mt-[70%]
+        @apply ml-12 xl:ml-40 flex justify-start py-4 bg-veryDarkBlue w-8 /*xxxl:mt-[35%] xl:mt-[50%] mt-[70%]*/
     }
 
     .image img {
@@ -177,7 +185,7 @@
     }
 
     .alert {
-        @apply absolute xl:w-[17rem] xl:h-[85px] md:w-[13rem] md:h-[70px] w-[10rem] h-[60px] -ml-[20rem] xl:mt-[5rem] rounded-[5px] bg-[#2f2f2f] inline
+        @apply absolute xl:w-[17rem] xl:h-[85px] md:w-[13rem] md:h-[70px] w-[10rem] h-[60px] -ml-[20rem] xl:mt-[-30rem] mt-[-45rem] rounded-[5px] bg-[#1f1f1f] inline
     }
 
     .alertheader {
@@ -201,6 +209,6 @@
 
     /* footer styles */
     .footer {
-        @apply w-full bg-darkGrey h-60 mt-[50%] flex justify-center pt-10
+        @apply w-full bg-darkGrey h-96
     }
 }

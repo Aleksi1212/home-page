@@ -84,7 +84,7 @@ function Navbar() {
                     
                 {/* Mobile menu */}
                 <div className='menu' id='menu'>
-                    <ul className='flex justify-between w-[50%]'>
+                    <ul className='flex justify-between w-[60%] ml-10'>
 
                         {/* About button */}
                         <li className='link' id='aboutLink'>
