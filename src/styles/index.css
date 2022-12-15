@@ -185,7 +185,7 @@
     }
 
     .alert {
-        @apply absolute xl:w-[17rem] xl:h-[85px] md:w-[13rem] md:h-[70px] w-[10rem] h-[60px] -ml-[20rem] xl:mt-[-30rem] mt-[-45rem] rounded-[5px] bg-[#1f1f1f] inline
+        @apply absolute xl:w-[17rem] xl:h-[85px] md:w-[13rem] md:h-[70px] w-[10rem] h-[60px] -ml-[20rem] md:mt-[-30rem] mt-[-25rem] rounded-[5px] bg-[#2f2f2f] inline
     }
 
     .alertheader {
